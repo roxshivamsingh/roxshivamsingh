@@ -19,11 +19,12 @@ export default function Home() {
                 // alignItems: "center",
 
             }}>
-                <Container
-                // fixed
-                // maxWidth="sm"
-                >
-                    <Grid container>
+                <Container>
+                    <Grid container
+                        direction="row"
+                        justifyContent="space-between"
+                        alignItems="center"
+                    >
                         <Grid item xs={6} sm={6} md={6} lg={6} >
                             <Stack spacing={3}>
                                 <Typography variant='h4' sx={{ fontWeight: 600, fontFamily: "Roboto" }}>
@@ -45,7 +46,7 @@ export default function Home() {
 
                         </Grid>
                         <Grid item xs={6} sm={6} md={6} lg={6} >
-                            <Stack display='flex' direction='row' justifyContent='center'>
+                            <Stack display='flex' flexDirection="row-reverse">
 
                                 <AccountCircleOutlinedIcon sx={{
                                     fontSize: '10rem',
