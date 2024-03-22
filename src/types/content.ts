@@ -1,0 +1,19 @@
+export const TECH_ICONS = [
+    'bootstrap',
+    'django',
+    'tailwind-css',
+    'ant-design',
+    'php',
+    'nestjs',
+    'firebase',
+    'mongodb',
+    'nodejs',
+    'laravel',
+    'redux',
+    'material-ui',
+    'express',
+    'sqlite',
+    'fastapi',
+    'github',
+    'postman'
+]
