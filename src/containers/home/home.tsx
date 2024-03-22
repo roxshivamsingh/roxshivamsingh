@@ -1,26 +1,25 @@
 import {
     Box,
-    CardMedia,
     Container,
     Grid,
     IconButton,
     Stack,
     Tooltip,
     Typography,
-    useMediaQuery,
-    useTheme
+    // useMediaQuery,
+    // useTheme
 } from '@mui/material';
 import NavBar from '../../components/navbar/navbar';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+// import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { TECH_ICONS } from '../../types/content';
 import classes from "./home.module.scss"
 
 import passport from "./photo.png"
 export default function Home() {
-    const theme = useTheme();
-    const matches = useMediaQuery(theme.breakpoints.up("sm"));
+    // const theme = useTheme();
+    // const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
     return (
         <div >
