@@ -28,7 +28,7 @@ export default function NavBar() {
                     }}
 
                 >
-                    roxshivamsingh
+                    &lt;roxshivamsingh /&gt;
 
                 </Link>
                 <Box sx={{ ml: 'auto' }}>

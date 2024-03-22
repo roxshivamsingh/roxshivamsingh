@@ -1,26 +1,42 @@
-import { Box, Container, Grid, IconButton, Stack, Tooltip, Typography } from '@mui/material';
+import {
+    Box,
+    CardMedia,
+    Container,
+    Grid,
+    IconButton,
+    Stack,
+    Tooltip,
+    Typography,
+    useMediaQuery,
+    useTheme
+} from '@mui/material';
 import NavBar from '../../components/navbar/navbar';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { TECH_ICONS } from '../../types/content';
+import classes from "./home.module.scss"
 
+import passport from "./photo.png"
 export default function Home() {
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.up("sm"));
+
     return (
         <div >
             <NavBar />
-            <Box sx={{ mt: 10 }} />
-            <Box sx={{
-                // mt: "20%"
-                // border: "1px solid red",
-                // display: "flex",
-                // flexDirection: "column",
-                // justifyContent: "center",
-                // alignItems: "center",
-
-            }}>
+            {/* <Box sx={{ mt: 10 }} /> */}
+            <Box
+                component={"main"}
+                display={"flex"}
+                flexDirection={{ xs: "column", md: "row" }}
+                alignItems={"center"}
+                justifyContent={"center"}
+                minHeight={"calc(100vh - 70px)"}
+            >
                 <Container>
-                    <Grid container
+                    <Grid
+                        container
                         direction="row"
                         justifyContent="space-between"
                         alignItems="center"
@@ -40,18 +56,43 @@ export default function Home() {
                                     <IconButton>
                                         <LinkedInIcon fontSize='large' />
                                     </IconButton>
-
                                 </Stack>
                             </Stack>
-
                         </Grid>
                         <Grid item xs={6} sm={6} md={6} lg={6} >
                             <Stack display='flex' flexDirection="row-reverse">
 
-                                <AccountCircleOutlinedIcon sx={{
+                                <Box className={classes.floating}>
+                                    <Box
+                                        alt="roxshivamsingh"
+                                        component="img"
+                                        src={passport}
+                                        sx={{
+                                            height: { xs: "35vh", md: "40vh" },
+                                            width: { xs: "35vh", md: "40vh" },
+                                            borderRadius: "50%",
+                                            p: "0.75rem",
+                                            mb: { xs: "1rem", sm: 0 },
+                                            mr: { xs: 0, md: "2rem" },
+
+                                            background: "linear-gradient(90deg, hsla(328, 100%, 36%, 1) 0%, hsla(176, 57%, 89%, 1) 100%)",
+
+                                            // background: `-webkit-linear-gradient(135deg, ${["rgb(0,255,164)", "rgb(166,104,255)"]})`
+
+                                        }}
+
+
+                                    />
+
+                                </Box>
+
+
+                                {/* <AccountCircleOutlinedIcon sx={{
                                     fontSize: '10rem',
                                     color: "gray"
-                                }} />
+                                }}
+                                    className={classes.floating}
+                                /> */}
 
                             </Stack>
                         </Grid>
@@ -61,8 +102,8 @@ export default function Home() {
                         <Typography variant="h5">
                             Tech Stack |
                         </Typography>
-                        {TECH_ICONS.sort().slice(0, 5).map((row) => (<Tooltip title={row?.replace(".png", "")}>
-                            <IconButton>
+                        {TECH_ICONS.sort().slice(0, 5).map((row) => (<Tooltip key={row} title={row?.replace(".png", "")}>
+                            <IconButton size='small'>
                                 <img src={`/images/${row}.png`} style={{ width: 40 }} />
                             </IconButton>
                         </Tooltip>))}
