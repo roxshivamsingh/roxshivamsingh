@@ -1,9 +1,11 @@
 import Style from "./About.module.scss";
 import Terminal from "./Terminal";
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { info } from "../../types/info";
 
 export default function About() {
+  console.log(window.scrollY)
+
 
 
   const renderAboutText = (<>
@@ -77,6 +79,10 @@ export default function About() {
   return (
     <>
       <Container>
+        <Box sx={{ mt: 5 }} />
+        <Typography variant='h4' sx={{ fontWeight: 500 }}>
+          About
+        </Typography>
         <Box sx={{ mt: "3rem" }}>
           {[renderAboutText, renderSkillText, renderMiscText]?.map((row, i) => {
             return (<Terminal key={i}>

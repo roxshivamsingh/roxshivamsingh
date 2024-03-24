@@ -9,7 +9,9 @@ export type TInfoPortfolio = {
 export const NAVLINKS = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
-  { label: 'Projects', path: '/projects' }
+
+  { label: 'Projects', path: '/projects' },
+  // { label: 'Contact', path: '/contact' },
 ]
 // export const colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
 
@@ -27,19 +29,19 @@ export const info = {
 
   miniBio: [
     {
-      emoji: "☕",
+      emoji: "tea",
       text: "Fueled by Tea",
     },
     {
-      emoji: "🇮🇳",
+      emoji: "location",
       text: "Based in the India",
     },
     {
-      emoji: "💼",
+      emoji: "job",
       text: "React Developer at Sulovi Technologies",
     },
     {
-      emoji: "✉️",
+      emoji: "email",
       text: "roxshivamsingh@gmail.com",
     },
   ],

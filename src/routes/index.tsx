@@ -1,8 +1,10 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import Home from "../containers/home/Home";
 import About from "../containers/about/About";
-import Portfolio from "../containers/portfolio/Portfolio";
+// import Portfolio from "../containers/portfolio/Portfolio";
 import ProjectNotLive from "../containers/portfolio/projectNotLivePage";
+import Project from "../containers/projects/project";
+
 import BaseLayout from "../containers/BaseLayout";
 export default function Router() {
 
@@ -19,8 +21,12 @@ export default function Router() {
                 element: <About />
             },
             {
+                path: 'contact',
+                element: <About />
+            },
+            {
                 path: 'projects',
-                element: <Portfolio />
+                element: <Project />
             },
             {
                 path: '/project-not-live',
