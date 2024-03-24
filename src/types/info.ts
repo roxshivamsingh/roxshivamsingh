@@ -6,6 +6,11 @@ export type TInfoPortfolio = {
   status?: boolean
 }
 
+export const NAVLINKS = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Projects', path: 'projects' }
+]
 export const colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
 
 export const info = {

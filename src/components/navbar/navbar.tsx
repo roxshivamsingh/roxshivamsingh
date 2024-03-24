@@ -1,17 +1,16 @@
-import Box from '@mui/material/Box';
 import classes from "./Navbar.module.scss";
-import Link from '@mui/material/Link';
-import { info } from '../../types/info';
-import { Container, Stack } from '@mui/material';
+import { NAVLINKS, info } from '../../types/info';
+import { Box, Container, Stack, Link } from '@mui/material';
+import { useLocation } from 'react-router-dom';
 
-
-const NAVLINKS = ['Home', 'Contact', 'Projects'];
 
 export default function NavBar() {
+
+  const { pathname } = useLocation();
   return (
     <Container>
-      <Stack direction='row' spacing={3}>
-        <Link href=""
+      <Stack direction='row' spacing={3} sx={{ py: 2 }}>
+        <Link href="/"
           sx={{
             flexGrow: 1,
             color: "inherit",
@@ -28,22 +27,25 @@ export default function NavBar() {
 
         </Link>
         <Stack sx={{ ml: 'auto' }} direction='row' spacing={2}>
-          {NAVLINKS.map((item) => (
-            <Box key={item} sx={{
-              color: 'inherit',
-              fontWeight: 700,
-              textTransform: "none",
-              p: { sm: 0, xs: 0 },
-              borderImageSource: info.gradient,
-              // textTransform: "capitalize",
-            }}
-
-
-              className={classes.active}
-            >
-              {item}
-            </Box>
-          ))}
+          {NAVLINKS.map((item) => {
+            const isActive = item.path === pathname
+            return (
+              <Box key={item.path}
+                component={Link}
+                href={item.path}
+                sx={{
+                  color: 'inherit',
+                  fontWeight: 700,
+                  textTransform: "none",
+                  p: { sm: 0, xs: 0 },
+                  borderImageSource: isActive ? info.gradient : 'none',
+                }}
+                className={isActive ? classes.active : ''}
+              >
+                {item.label}
+              </Box>
+            )
+          })}
 
         </Stack>
       </Stack>
