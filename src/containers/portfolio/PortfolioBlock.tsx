@@ -1,9 +1,11 @@
-import React from "react";
+import { TInfoPortfolio } from "../../types/info";
 import IconLink from "./IconLink";
 import { Box } from "@mui/material";
 
-function PortfolioBlock(props) {
-  const { image, live, title } = props;
+interface IProps { item: TInfoPortfolio }
+
+function PortfolioBlock({ item }: IProps) {
+  const { image, live, title } = item;
   return (
     <Box
       display={"flex"}

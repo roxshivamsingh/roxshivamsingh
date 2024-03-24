@@ -1,4 +1,10 @@
-
+export type TInfoPortfolio = {
+  title: string,
+  live: string,
+  source: string,
+  image: string,
+  status?: boolean
+}
 
 export const colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
 
@@ -140,5 +146,6 @@ export const info = {
     //   // image: healify,
     //   status: false
     // },
-  ],
+  ] as TInfoPortfolio[],
 };
+
