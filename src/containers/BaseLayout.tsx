@@ -8,11 +8,11 @@ export default function BaseLayout() {
 
   const [darkMode, setDarkMode] = useState(true);
 
-  function handleToggleDarkMode() {
-    const oppositeOfCurrentDarkMode = !darkMode;
-    localStorage.setItem("darkMode", `${oppositeOfCurrentDarkMode}`);
-    setDarkMode(oppositeOfCurrentDarkMode);
-  }
+  // function handleToggleDarkMode() {
+  //   const oppositeOfCurrentDarkMode = !darkMode;
+  //   localStorage.setItem("darkMode", `${oppositeOfCurrentDarkMode}`);
+  //   setDarkMode(oppositeOfCurrentDarkMode);
+  // }
 
   useEffect(() => {
     const detectedDarkMode = eval(localStorage.getItem("darkMode") || '');
@@ -34,7 +34,10 @@ export default function BaseLayout() {
         justifyContent={"space-between"}
       >
         <Grid item>
-          <Navbar darkMode={darkMode} handleClick={handleToggleDarkMode} />
+          <Navbar
+          // darkMode={darkMode}
+          // handleClick={handleToggleDarkMode}
+          />
         </Grid>
         <Grid item flexGrow={1}>
           {/* <Routes>
