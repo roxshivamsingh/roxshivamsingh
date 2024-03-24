@@ -9,7 +9,13 @@ export default function NavBar() {
   const { pathname } = useLocation();
   return (
     <Container>
-      <Stack direction='row' spacing={3} sx={{ py: 2 }}>
+      <Stack direction='row'
+        sx={{
+          py: 1
+          // border: "1px solid blue"
+        }}
+        spacing={3}
+      >
         <Link href="/"
           sx={{
             flexGrow: 1,
@@ -26,24 +32,33 @@ export default function NavBar() {
           &lt;roxshivamsingh /&gt;
 
         </Link>
-        <Stack sx={{ ml: 'auto' }} direction='row' spacing={2}>
+        <Stack sx={{
+          ml: 'auto',
+          //  border: "1px solid red",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center"
+
+        }} direction='row' spacing={2}>
           {NAVLINKS.map((item) => {
             const isActive = item.path === pathname
-            return (
-              <Box key={item.path}
-                component={Link}
-                href={item.path}
-                sx={{
-                  color: 'inherit',
-                  fontWeight: 700,
-                  textTransform: "none",
-                  p: { sm: 0, xs: 0 },
-                  borderImageSource: isActive ? info.gradient : 'none',
-                }}
-                className={isActive ? classes.active : ''}
-              >
-                {item.label}
-              </Box>
+            return (<Box key={item.path}
+              component={Link}
+              href={item.path}
+              sx={{
+
+                color: 'inherit',
+                fontWeight: 700,
+                fontDecoration: "none",
+                textTransform: "none",
+                p: { sm: 0, xs: 0, lg: 0, md: 0 },
+                borderImageSource: isActive ? info.gradient : 'none',
+              }}
+              className={isActive ? classes.active : ''}
+            >
+              {item.label}
+            </Box>
             )
           })}
 

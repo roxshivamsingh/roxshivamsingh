@@ -9,10 +9,11 @@ export type TInfoPortfolio = {
 export const NAVLINKS = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
-  { label: 'Projects', path: 'projects' }
+  { label: 'Projects', path: '/projects' }
 ]
-export const colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
+// export const colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
 
+export const colors = ["#B90043", "#E100FF"]
 export const info = {
   firstName: "Shivam",
   lastName: "Singh",
