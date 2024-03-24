@@ -1,5 +1,4 @@
 import "./App.module.scss";
-import { BrowserRouter } from "react-router-dom";
 import Router from "./routes";
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -17,9 +16,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
+      <Router />
     </ThemeProvider>
   );
 }
