@@ -1,7 +1,7 @@
 import classes from "./Home.module.scss";
 import EmojiBullet from "./EmojiBullet";
 import passport from "../../assets/images/photo.png";
-import { Box, IconButton } from "@mui/material";
+import { Box } from "@mui/material";
 import { info } from "../../types/info";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -63,13 +63,12 @@ export default function Home() {
         fontSize={{ xs: "2rem", md: "2.5rem" }}
       >
 
-        <IconButton LinkComponent={Link} target="_blank" href={info.social.linkedin}>
+        <Link target="_blank" to={info.social.linkedin} >
           <LinkedInIcon fontSize="large" />
-        </IconButton>
-        <IconButton LinkComponent={Link} target="_blank" href={info.social.github}>
+        </Link>
+        <Link target="_blank" to={info.social.github} >
           <GitHubIcon fontSize="large" />
-        </IconButton>
-
+        </Link>
       </Box>
     </Box>
   </Box>
