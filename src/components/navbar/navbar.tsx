@@ -10,19 +10,13 @@ import {
   SxProps
 } from '@mui/material';
 import { useLocation } from 'react-router-dom';
-import { useEffect } from "react";
 
 
 export default function NavBar() {
 
   const { pathname } = useLocation();
 
-  // useEffect(() => {
-  //   if (window.scrollY >= 392) {
-  //     console.log(true)
-  //   }
 
-  // }, [window.scrollY])
   return (<Box sx={{ flexGrow: 1 }}>
     <AppBar position="fixed"
     // elevation={0} sx={{ background: "inherit" }}
@@ -51,7 +45,7 @@ export default function NavBar() {
         </Stack>
       </Toolbar>
     </AppBar>
-    <Box sx={{ mt: 5 }} />
+    <Box sx={{ mt: 10 }} />
   </Box>
   )
 
@@ -62,7 +56,7 @@ const SX: { [key: string]: SxProps } = {
   Brand: {
     flexGrow: 1,
     py: 1,
-    display: { xs: 'none', sm: 'block' },
+    // display: { xs: 'none', sm: 'block' },
     background: info.gradient,
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",

@@ -157,3 +157,45 @@ export const info = {
   ] as TInfoPortfolio[],
 };
 
+
+
+
+export const PROJECT_OPTIONS = [{
+  label: 'Content Right',
+  cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrGbYVybUZXBmSFDktnjGZk-OCMqDgzQSpMCay2xoAQ&s",
+  description: "Chat app like Chat-GPT with Google social login and manual login. When we    enter a prompt, it will give an output in video format. Based on React.js,    Firebase, Redux-Toolkit Material-UI. This app still in development.",
+
+  technologies: ["Node.js", "React.js", "Firebase", "Material-UI"],
+  link: {
+    github: "https://github.com/digitalphora/devgpt-contentright",
+    live: "https://devgpt-contentright.vercel.app/"
+  }
+},
+
+{
+  label: 'Shorts',
+  cover: "https://play-lh.googleusercontent.com/GuHDoYst1TFXTngf4aWaJl_joG0kO6DhzOaIqNlWMrha915Zcxz50Ur-UWdngHb3oyg",
+  description: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
+  technologies: ["Node.js", "React.js", "Firebase", "Material-UI"],
+
+  link: {
+    github: "https://github.com/roxshivamsingh/shorts",
+    live: "https://devgpt-contentright.vercel.app/"
+  }
+},
+
+{
+  label: 'VideoShare',
+  cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ78Yr9IX28mmCnEYoddY4BecelTNqTEO56CsnKYFpUfQ&s",
+  description: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
+  technologies: ["Node.js", "React.js", "Firebase", "Material-UI"],
+
+  link: {
+    github: "https://github.com/roxshivamsingh/shorts",
+    live: "https://devgpt-contentright.vercel.app/"
+  }
+},
+
+
+
+]

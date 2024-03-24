@@ -4,10 +4,6 @@ import { Box, Container, Typography } from "@mui/material";
 import { info } from "../../types/info";
 
 export default function About() {
-  console.log(window.scrollY)
-
-
-
   const renderAboutText = (<>
     <p>
       <span style={{ color: info.baseColor }}>
@@ -79,7 +75,6 @@ export default function About() {
   return (
     <>
       <Container>
-        <Box sx={{ mt: 5 }} />
         <Typography variant='h4' sx={{ fontWeight: 500 }}>
           About
         </Typography>
