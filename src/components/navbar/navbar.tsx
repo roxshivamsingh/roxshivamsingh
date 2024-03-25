@@ -61,7 +61,7 @@ const SX: { [key: string]: SxProps } = {
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     color: "inherit",
-    textDecoration: "none",
+    // textDecoration: "none",
     fontFamily: 'Pacifico',
     "&:hover": {
       textDecoration: "underline",
@@ -71,7 +71,7 @@ const SX: { [key: string]: SxProps } = {
   NavLink: {
     color: 'inherit',
     fontWeight: 700,
-    fontDecoration: "none",
+    textDecoration: "none",
     textTransform: "none",
     p: { sm: 0, xs: 0, lg: 0, md: 0 },
   }

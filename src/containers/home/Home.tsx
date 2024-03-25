@@ -59,6 +59,8 @@ export default function Home() {
       <Box
         display={"flex"}
         gap={matches ? "1.5rem" : "10px"}
+
+        sx={{ p: { md: "0.8rem", sm: "0.5rem" } }}
         justifyContent={matches ? "left" : "center"}
         fontSize={{ xs: "2rem", md: "2.5rem" }}
       >
