@@ -147,7 +147,7 @@ export const PROJECT_OPTIONS = [
     technologies: ["Laravel", "Bootstrap", "PHP", "MySQL", "NGINX"],
     link: {
       github: "",
-      live: "https://www.royalindiashop.com"
+      live: "https://royalindiashop.com"
     }
   },
 ]
