@@ -136,8 +136,18 @@ export const PROJECT_OPTIONS = [
     technologies: ["Node.js", "React.js", "TypeScript", "MUI"],
 
     link: {
-      github: "https://github.com/roxshivamsingh/shorts",
-      live: ""
+      github: "https://github.com/roxshivamsingh/videoshare",
+      live: "https://videoshare-ashy.vercel.app/"
+    }
+  },
+  {
+    label: 'RoyalIndiaShop',
+    cover: "https://w7.pngwing.com/pngs/75/407/png-transparent-hand-holding-shopping-bag-silhouette-illustration-online-shopping-shopping-bag-logo-coupon-business-shopping-bags-business-woman-rectangle-retail-thumbnail.png",
+    description: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
+    technologies: ["Laravel", "Bootstrap", "PHP", "MySQL", "NGINX"],
+    link: {
+      github: "",
+      live: "https://www.royalindiashop.com"
     }
   },
 ]
