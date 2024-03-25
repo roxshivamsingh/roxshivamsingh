@@ -9,11 +9,8 @@ export type TInfoPortfolio = {
 export const NAVLINKS = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
-
   { label: 'Projects', path: '/projects' },
-  // { label: 'Contact', path: '/contact' },
 ]
-// export const colors = ["rgb(0,255,164)", "rgb(166,104,255)"];
 
 export const colors = ["#B90043", "#E100FF"]
 export const info = {
@@ -49,19 +46,7 @@ export const info = {
     linkedin: "https://linkedin.com/in/roxshivamsingh",
     github: "https://github.com/roxshivamsingh"
   },
-  socials: [
-    {
-      link: "https://github.com/roxshivamsingh",
-      icon: "fa fa-github",
-      label: "github",
-    },
-    {
-      link: "https://linkedin.com/in/roxshivamsingh",
-      icon: "fa fa-linkedin",
-      label: "linkedin",
-    },
 
-  ],
 
   bio:
     `
@@ -92,6 +77,7 @@ export const info = {
     exposedTo: [
       "Django",
       "Canva",
+      "Adonis.js"
     ],
   },
 
@@ -104,114 +90,54 @@ export const info = {
       label: "Coding",
       emoji: "🖥️",
     },
-
-    // {
-    //   label: "cooking",
-    //   emoji: "🌶",
-    // },
   ],
-  portfolio: [
-    // {
-    //   title: "Sparkeey",
-    //   live: "https://play.google.com/store/apps/details?id=com.app.sparkeey&pcampaignid=web_share",
-    //   source: "https://github.com/roxshivamsingh",
-    //   // image: sparkeey,
-    //   status: true
-    // },
-    // {
-    //   title: "MekGarage",
-    //   live: "https://play.google.com/store/apps/details?id=com.mani.mekvahanpartner&pcampaignid=web_share",
-    //   source: "https://github.com/roxshivamsingh",
-    //   // image: mekgarage,
-    //   status: true
-    // },
-    // {
-    //   title: "W3Sports",
-    //   live: "https://w3sport.co.uk/",
-    //   source: "https://github.com/roxshivamsingh",
-    //   // image: w3sport,
-    //   status: true
-    // },
-    // {
-    //   title: "Mekvahan",
-    //   live: "https://play.google.com/store/apps/details?id=com.myapp.mekvahan&pcampaignid=web_share",
-    //   source: "https://github.com/roxshivamsingh",
-    //   // image: mekvahan,
-    //   status: true
-    // },
-    // {
-    //   title: "Engagr",
-    //   live: "/project-not-live",
-    //   source: "https://github.com/roxshivamsingh",
-    //   // image: engagr,
-    //   status: false
-    // },
-    // {
-    //   title: "YubiHealth",
-    //   live: "/project-not-live",
-    //   source: "https://github.com/roxshivamsingh",
-    //   // image: yubihealth,
-    //   status: false
-    // },
-    // {
-    //   title: "DRL Healify",
-    //   live: "/project-not-live",
-    //   source: "https://github.com/roxshivamsingh",
-    //   // image: healify,
-    //   status: false
-    // },
-  ] as TInfoPortfolio[],
 };
 
 
 
 
-export const PROJECT_OPTIONS = [{
-  label: 'Content Right',
-  cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrGbYVybUZXBmSFDktnjGZk-OCMqDgzQSpMCay2xoAQ&s",
-  description: "Chat app like Chat-GPT with Google social login and manual login. When we    enter a prompt, it will give an output in video format. Based on React.js,    Firebase, Redux-Toolkit Material-UI. This app still in development.",
+export const PROJECT_OPTIONS = [
+  {
+    label: 'Content Right',
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrGbYVybUZXBmSFDktnjGZk-OCMqDgzQSpMCay2xoAQ&s",
+    description: "Chat app like Chat-GPT with Google social login and manual login. When we    enter a prompt, it will give an output in video format. Based on React.js,    Firebase, Redux-Toolkit Material-UI. This app still in development.",
+    technologies: ["React.js", "TypeScript", "Firebase", "MUI"],
+    link: {
+      github: "https://github.com/digitalphora/devgpt-contentright",
+      live: "https://devgpt-contentright.vercel.app/"
+    }
+  },
+  {
+    label: 'Shorts',
+    cover: "https://play-lh.googleusercontent.com/GuHDoYst1TFXTngf4aWaJl_joG0kO6DhzOaIqNlWMrha915Zcxz50Ur-UWdngHb3oyg",
+    description: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
+    technologies: ["React.js", "TypeScript", "Firebase", "MUI"],
 
-  technologies: ["React.js", "TypeScript", "Firebase", "MUI"],
-  link: {
-    github: "https://github.com/digitalphora/devgpt-contentright",
-    live: "https://devgpt-contentright.vercel.app/"
-  }
-},
+    link: {
+      github: "https://github.com/roxshivamsingh/shorts",
+      live: "https://devgpt-contentright.vercel.app/"
+    }
+  },
+  {
+    label: 'QuesU',
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrlhkzU7yw7uOqgryO_EhDKpnbLePrqIX8EKQxLYkmQ&s",
+    description: "StackOverflow-like apps contain manual login. Create a question, answers, and rate them. Built on Laravel, Bootstrap, and MySQL.",
+    technologies: ["Laravel", "PHP", "MySQL", "Composer", "Bootstrap"],
 
-{
-  label: 'Shorts',
-  cover: "https://play-lh.googleusercontent.com/GuHDoYst1TFXTngf4aWaJl_joG0kO6DhzOaIqNlWMrha915Zcxz50Ur-UWdngHb3oyg",
-  description: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
-  technologies: ["React.js", "TypeScript", "Firebase", "MUI"],
+    link: {
+      github: "https://github.com/roxshivamsingh/shorts",
+      live: ""
+    }
+  },
+  {
+    label: 'VideoShare',
+    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ78Yr9IX28mmCnEYoddY4BecelTNqTEO56CsnKYFpUfQ&s",
+    description: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
+    technologies: ["Node.js", "React.js", "TypeScript", "MUI"],
 
-  link: {
-    github: "https://github.com/roxshivamsingh/shorts",
-    live: "https://devgpt-contentright.vercel.app/"
-  }
-},
-{
-  label: 'QuesU',
-  cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrlhkzU7yw7uOqgryO_EhDKpnbLePrqIX8EKQxLYkmQ&s",
-  description: "StackOverflow-like apps contain manual login. Create a question, answers, and rate them. Built on Laravel, Bootstrap, and MySQL.",
-  technologies: ["Laravel", "PHP", "MySQL", "Composer", "Bootstrap"],
-
-  link: {
-    github: "https://github.com/roxshivamsingh/shorts",
-    live: "https://devgpt-contentright.vercel.app/"
-  }
-},
-{
-  label: 'VideoShare',
-  cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ78Yr9IX28mmCnEYoddY4BecelTNqTEO56CsnKYFpUfQ&s",
-  description: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
-  technologies: ["Node.js", "React.js", "TypeScript", "MUI"],
-
-  link: {
-    github: "https://github.com/roxshivamsingh/shorts",
-    live: "https://devgpt-contentright.vercel.app/"
-  }
-},
-
-
-
+    link: {
+      github: "https://github.com/roxshivamsingh/shorts",
+      live: ""
+    }
+  },
 ]

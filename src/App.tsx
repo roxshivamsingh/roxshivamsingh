@@ -6,6 +6,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useScrollToTop } from "./hooks/use-scroll-top";
 
 const theme = createTheme({
   palette: {
@@ -14,6 +15,7 @@ const theme = createTheme({
 });
 
 function App() {
+  useScrollToTop()
   return (
     <ThemeProvider theme={theme}>
       <Router />

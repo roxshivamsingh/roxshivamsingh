@@ -9,16 +9,14 @@ import {
     Chip,
     CardActions,
     IconButton,
-    Box,
     CardHeader,
 } from '@mui/material';
-// import HttpIcon from '@mui/icons-material/Http';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { GitHub as GitHubIcon } from '@mui/icons-material';
 import { PROJECT_OPTIONS } from '../../types/info';
 import { Link } from 'react-router-dom';
 export default function Project() {
     return (
-        <Container  >
+        <Container>
             <Typography variant='h4' sx={{ fontWeight: 500 }}>
                 Projects
             </Typography>
@@ -32,107 +30,66 @@ export default function Project() {
                 }}
             >
                 <Grid container spacing={2} >
-                    {PROJECT_OPTIONS?.map((row, i) => (
+                    {PROJECT_OPTIONS?.map((row, i) => (<Grid item key={i} xs={12} sm={12} md={4} lg={4}>
+                        <Card sx={{ borderRadius: 3 }} elevation={4}>
+                            <CardHeader
+                                action={<IconButton size='small'
+                                    LinkComponent={Link}
+                                    href={row.link.github || ''}
+                                    target='_blank'
+                                    disabled={!row.link.github?.length}
+                                >
+                                    <GitHubIcon fontSize='small' />
+                                </IconButton>}
+                                title={<Typography
+                                    component={row.link.live ? Link : 'span'}
+                                    to={row.link.live || ''}
+                                    target='_blank'
+                                >
+                                    {row.label}
+                                </Typography>}
 
-                        <Grid item key={i} xs={12} sm={12} md={4} lg={4}>
-                            <Card sx={{ borderRadius: 3 }}
-
-                                elevation={4}
+                            // subheader="September 14, 2016"
+                            />
+                            <Link
+                                style={{ textDecoration: "none" }}
+                                to={row.link.live}
+                                target='_blank'
                             >
-                                <CardHeader
-                                    // avatar={
-                                    //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                                    //     R
-                                    //   </Avatar>
-                                    // }
-                                    action={
-                                        <Box>
-                                            <IconButton size='small' LinkComponent={Link}
-                                                href={row.link.github || ''}
-                                                disabled={!row.link.github?.length}
-                                            >
-                                                <GitHubIcon fontSize='small' />
-                                            </IconButton>
-
-                                        </Box>
-                                    }
-                                    title={<Typography
-                                        component={row.link.live ? Link : 'span'}
-                                        to={row.link.live || ''} target='_blank'
+                                <CardMedia sx={{ height: 200 }} image={row.cover} title={row.label} />
+                            </Link>
+                            <CardContent >
+                                <Stack spacing={2}>
+                                    <Typography variant="body2" color="text.secondary"
                                         sx={{
-                                            "&:hover": {
-                                                color: "blue"
-
-                                            }
+                                            overflow: "hidden",
+                                            textOverflow: "ellipsis",
+                                            display: "-webkit-box",
+                                            WebkitLineClamp: 2,
+                                            WebkitBoxOrient: "vertical",
                                         }}
                                     >
-                                        {row.label}
-                                    </Typography>}
 
-                                // subheader="September 14, 2016"
-                                />
-                                <CardMedia
-                                    sx={{ height: 200 }}
-                                    image={row.cover}
-                                    title={row.label}
-                                />
-                                <CardContent >
-                                    <Stack spacing={2}>
+                                        {row.description}
+                                    </Typography>
 
-
-                                        <Typography variant="body2" color="text.secondary"
-                                            sx={{
-                                                overflow: "hidden",
-                                                textOverflow: "ellipsis",
-                                                display: "-webkit-box",
-                                                WebkitLineClamp: 2,
-                                                WebkitBoxOrient: "vertical",
-                                            }}
-                                        // noWrap
-
-                                        >
-
-                                            {row.description}
-                                        </Typography>
-
-                                    </Stack>
-                                </CardContent>
-                                <CardActions
-                                // sx={{ display: "flex", flexDirection: "column" }}
-                                >
-                                    <Stack
-                                        // sx={{
-                                        //     display: "flex",
-                                        //     flexDirection: "row",
-                                        //     alignItems: "center",
-                                        //     justifyContent: "space-between",
-
-
-                                        // }}
-                                        direction='row'
-                                        // justifyContent='center'
-                                        // alignContent='center'
-                                        // alignItems='center'
-
-                                        spacing={1}
-                                    >
-                                        {row?.technologies?.map((technology, j) =>
-                                            <Chip label={technology} size='small'
-                                                key={j}
-
-                                            />
-
-                                        )}
-                                    </Stack>
-                                    {/* <Button size="small">Share</Button> */}
-                                    {/* <Button size="small">Learn More</Button> */}
-                                </CardActions>
-                            </Card>
-                        </Grid>
+                                </Stack>
+                            </CardContent>
+                            <CardActions>
+                                <Stack direction='row' spacing={1}>
+                                    {row?.technologies?.map((technology, j) =>
+                                        <Chip label={technology} size='small'
+                                            key={j}
+                                        />
+                                    )}
+                                </Stack>
+                                {/* <Button size="small">Share</Button> */}
+                                {/* <Button size="small">Learn More</Button> */}
+                            </CardActions>
+                        </Card>
+                    </Grid>
                     ))}
-
                 </Grid>
             </Stack>
-        </Container >
-    );
+        </Container>);
 }
