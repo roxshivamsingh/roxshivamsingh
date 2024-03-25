@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Style from "./BaseLayout.module.scss";
-import Navbar from "../components/navbar/navbar";
+import classes from "./base-layout.module.scss";
+import Navbar from "../../components/navbar/navbar";
 import { Outlet } from "react-router-dom";
 import { Box, Grid } from "@mui/material";
 
@@ -25,7 +25,7 @@ export default function BaseLayout() {
   }, []);
 
   return (
-    <Box className={darkMode ? Style.dark : Style.light}>
+    <Box className={darkMode ? classes.dark : classes.light}>
       <Grid
         container
         display={"flex"}

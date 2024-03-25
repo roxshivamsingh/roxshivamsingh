@@ -1,5 +1,5 @@
 import classes from "./Home.module.scss";
-import EmojiBullet from "./EmojiBullet";
+import EmojiBullet from "../../components/emoji-bullet/emoji-bullet";
 import passport from "../../assets/images/photo.png";
 import { Box } from "@mui/material";
 import { info } from "../../types/info";

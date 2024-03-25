@@ -1,11 +1,9 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import Home from "../containers/home/Home";
 import About from "../containers/about/About";
-// import Portfolio from "../containers/portfolio/Portfolio";
-import ProjectNotLive from "../containers/portfolio/projectNotLivePage";
 import Project from "../containers/projects/project";
-
-import BaseLayout from "../containers/BaseLayout";
+import BaseLayout from "../containers/_layout/base-layout";
+import NotFound from "../containers/not-found/not-found";
 export default function Router() {
 
     return useRoutes([{
@@ -29,12 +27,12 @@ export default function Router() {
                 element: <Project />
             },
             {
-                path: '/project-not-live',
-                element: <ProjectNotLive />
+                path: '/not-found',
+                element: <NotFound />
             },
             {
                 path: '*',
-                element: <Navigate to="/project-not-live" replace />
+                element: <Navigate to="/not-found" replace />
             },
 
         ]

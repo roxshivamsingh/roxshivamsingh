@@ -1,5 +1,5 @@
 import Style from "./About.module.scss";
-import Terminal from "./Terminal";
+import Terminal from "../../components/terminal/Terminal";
 import { Box, Container, Typography } from "@mui/material";
 import { info } from "../../types/info";
 

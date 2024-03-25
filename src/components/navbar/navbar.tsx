@@ -11,16 +11,12 @@ import {
 } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 
-
 export default function NavBar() {
 
   const { pathname } = useLocation();
 
-
   return (<Box sx={{ flexGrow: 1 }}>
-    <AppBar position="fixed"
-    // elevation={0} sx={{ background: "inherit" }}
-    >
+    <AppBar position="fixed"    >
       <Toolbar >
         <Typography component='a' href="/" sx={SX.Brand}>
           &lt;roxshivamsingh /&gt;
