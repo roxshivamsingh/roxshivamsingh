@@ -65,27 +65,33 @@ export const info = {
 
   bio:
     `
-    I am a React Developer at Sulovi Technologies Private Limited, where I create robust and innovative web applications using a wide array of technologies. I have a Bachelor of Technology degree in Computer Science Engineering from BSACET, Mathura, and multiple certifications in web development, JQuery, and data science and math skills.
+    I am a React Developer at Sulovi Technologies Private Limited, where I create robust and innovative web applications using a wide array of technologies. I have a Bachelor of Technology degree in Computer Science Engineering from BSACET, Mathura.
     At Sulovi, I spearheaded the development and maintenance of applications using React and Firebase, introducing features such as virtualization, WhatsApp cloud API integration, and no-internet functionality. I also implemented a Google Cloud function as a microservice for backend tasks using Python, and migrated the Redux legacy pipeline to Redux Toolkit. I collaborated with other developers, tested the code quality, and documented the features and functionalities. I am always eager to learn new skills, enhance my existing ones, and deliver efficient solutions.
   `  ,
   skills: {
     proficientWith: [
       "Node.js",
       "React.js",
+      "Redux-Toolkit",
       "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "PostgreSQL",
-      "MySQL",
+      "Laravel",
       "MongoDB",
-      "GitHub"
+      "MySQL",
+      "SQLite",
+      "Firebase",
+      "Express.js",
+      "TypeScript",
+      "Chrome Extension Development",
+      "HTML",
+      "CSS",
+      "Linux",
+      "Docker",
+      "Postman",
+      "Github"
     ],
     exposedTo: [
-      "Nest.js",
-      "GraphQL",
-      "Terraform",
-      "Redux Toolkit",
-      // "nodejs", "python", "adobe illustrator"
+      "Django",
+      "Canva",
     ],
   },
 
@@ -95,8 +101,8 @@ export const info = {
       emoji: "🎸",
     },
     {
-      label: "Blogging",
-      emoji: "📰",
+      label: "Coding",
+      emoji: "🖥️",
     },
 
     // {
@@ -165,7 +171,7 @@ export const PROJECT_OPTIONS = [{
   cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrGbYVybUZXBmSFDktnjGZk-OCMqDgzQSpMCay2xoAQ&s",
   description: "Chat app like Chat-GPT with Google social login and manual login. When we    enter a prompt, it will give an output in video format. Based on React.js,    Firebase, Redux-Toolkit Material-UI. This app still in development.",
 
-  technologies: ["React.js", "TypeScript", "Firebase", "", "MUI"],
+  technologies: ["React.js", "TypeScript", "Firebase", "MUI"],
   link: {
     github: "https://github.com/digitalphora/devgpt-contentright",
     live: "https://devgpt-contentright.vercel.app/"
@@ -183,7 +189,17 @@ export const PROJECT_OPTIONS = [{
     live: "https://devgpt-contentright.vercel.app/"
   }
 },
+{
+  label: 'QuesU',
+  cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrlhkzU7yw7uOqgryO_EhDKpnbLePrqIX8EKQxLYkmQ&s",
+  description: "StackOverflow-like apps contain manual login. Create a question, answers, and rate them. Built on Laravel, Bootstrap, and MySQL.",
+  technologies: ["Laravel", "PHP", "MySQL", "Composer", "Bootstrap"],
 
+  link: {
+    github: "https://github.com/roxshivamsingh/shorts",
+    live: "https://devgpt-contentright.vercel.app/"
+  }
+},
 {
   label: 'VideoShare',
   cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ78Yr9IX28mmCnEYoddY4BecelTNqTEO56CsnKYFpUfQ&s",

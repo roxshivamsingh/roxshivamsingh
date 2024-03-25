@@ -15,7 +15,7 @@ import {
 // import HttpIcon from '@mui/icons-material/Http';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import { PROJECT_OPTIONS } from '../../types/info';
-
+import { Link } from 'react-router-dom';
 export default function Project() {
     return (
         <Container  >
@@ -47,16 +47,27 @@ export default function Project() {
                                     // }
                                     action={
                                         <Box>
-                                            <IconButton size='small'>
+                                            <IconButton size='small' LinkComponent={Link}
+                                                href={row.link.github || ''}
+                                                disabled={!row.link.github?.length}
+                                            >
                                                 <GitHubIcon fontSize='small' />
                                             </IconButton>
-                                            {/* <IconButton size='small'>
-                                                <HttpIcon fontSize='small' />
-                                            </IconButton> */}
 
                                         </Box>
                                     }
-                                    title={row.label}
+                                    title={<Typography
+                                        component={row.link.live ? Link : 'span'}
+                                        to={row.link.live || ''} target='_blank'
+                                        sx={{
+                                            "&:hover": {
+                                                color: "blue"
+
+                                            }
+                                        }}
+                                    >
+                                        {row.label}
+                                    </Typography>}
 
                                 // subheader="September 14, 2016"
                                 />
