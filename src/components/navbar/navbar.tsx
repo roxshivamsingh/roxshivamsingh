@@ -10,14 +10,28 @@ import {
   SxProps
 } from '@mui/material';
 import { useLocation } from 'react-router-dom';
+import { useEffect, useState } from "react";
 
 export default function NavBar() {
 
   const { pathname } = useLocation();
 
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setIsFixed(window.scrollY > 10)
+    })
+    return () => {
+      window.removeEventListener('scroll', () => {
+        console.log("Scroll End");
+      })
+    }
+  }, [])
+
   return (<Box sx={{ flexGrow: 1 }}>
-    <AppBar position="fixed"    >
-      <Toolbar >
+    <AppBar position="fixed" color={isFixed ? undefined : 'transparent'} elevation={0}>
+      <Toolbar>
         <Typography component='a' href="/" sx={SX.Brand}>
           &lt;roxshivamsingh /&gt;
         </Typography>
@@ -42,7 +56,7 @@ export default function NavBar() {
       </Toolbar>
     </AppBar>
     <Box sx={{ mt: 10 }} />
-  </Box>
+  </Box >
   )
 
 }

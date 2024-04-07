@@ -1,12 +1,50 @@
-import { useEffect, useState } from "react";
 import classes from "./base-layout.module.scss";
-import Navbar from "../../components/navbar/navbar";
+import Navbar from "../../components/navbar";
 import { Outlet } from "react-router-dom";
-import { Box, Grid } from "@mui/material";
+import { Box, Fab, Fade, Grid, useScrollTrigger } from "@mui/material";
+import { KeyboardArrowUp as KeyboardArrowUpIcon } from "@mui/icons-material"
 
-export default function BaseLayout() {
+interface IScrollTop {
+  window?: () => Window;
+  children: React.ReactElement;
+}
 
-  const [darkMode, setDarkMode] = useState(true);
+
+function ScrollTop(props: IScrollTop) {
+  const { children, window } = props;
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+    disableHysteresis: true,
+    threshold: 100,
+  });
+
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    const anchor = (
+      (event.target as HTMLDivElement).ownerDocument || document
+    ).querySelector('#back-to-top-anchor');
+
+    if (anchor) {
+      anchor.scrollIntoView({
+        block: 'center',
+      });
+    }
+  };
+
+  return (
+    <Fade in={trigger}>
+      <Box
+        onClick={handleClick}
+        role="presentation"
+        sx={{ position: 'fixed', bottom: 16, right: 16 }}
+      >
+        {children}
+      </Box>
+    </Fade>
+  );
+}
+export default function BaseLayout(props: IScrollTop) {
+
+  // const [darkMode, setDarkMode] = useState(true);
 
   // function handleToggleDarkMode() {
   //   const oppositeOfCurrentDarkMode = !darkMode;
@@ -14,18 +52,22 @@ export default function BaseLayout() {
   //   setDarkMode(oppositeOfCurrentDarkMode);
   // }
 
-  useEffect(() => {
-    const detectedDarkMode = eval(localStorage.getItem("darkMode") || '');
 
-    if (detectedDarkMode) {
-      setDarkMode(detectedDarkMode);
-    } else {
-      localStorage.setItem("darkMode", "false");
-    }
-  }, []);
+  // useEffect(() => {
+  //   const detectedDarkMode = eval(localStorage.getItem("darkMode") || '');
+
+  //   if (detectedDarkMode) {
+  //     setDarkMode(detectedDarkMode);
+  //   } else {
+  //     localStorage.setItem("darkMode", "false");
+  //   }
+  // }, []);
 
   return (
-    <Box className={darkMode ? classes.dark : classes.light}>
+    <Box
+      className={classes.dark}
+    // className={darkMode ? classes.dark : classes.light}
+    >
       <Grid
         container
         display={"flex"}
@@ -33,8 +75,9 @@ export default function BaseLayout() {
         minHeight={"100vh"}
         justifyContent={"space-between"}
       >
-        <Grid item>
+        <Grid item id="back-to-top-anchor">
           <Navbar
+
           // darkMode={darkMode}
           // handleClick={handleToggleDarkMode}
           />
@@ -51,6 +94,15 @@ export default function BaseLayout() {
             />
           </Routes> */}
           <Outlet />
+
+          <ScrollTop {...props}>
+            <Fab size="small" aria-label="scroll back to top"
+              // variant="dark"
+              sx={{ background: "inherit", color: "white", border: "1px solid white" }}
+            >
+              <KeyboardArrowUpIcon />
+            </Fab>
+          </ScrollTop>
         </Grid>
         {/* <Grid item>
           <Box

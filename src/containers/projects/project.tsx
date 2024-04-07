@@ -77,9 +77,10 @@ export default function Project() {
                             </Stack>
                         </CardContent>
                         <CardActions>
-                            <Stack direction='row' spacing={1}>
+                            <Stack direction='row'>
                                 {row?.technologies?.map((technology, j) =>
-                                    <Chip label={technology} size='small'
+                                    <Chip label={technology}
+                                        size='small'
                                         key={j}
                                     />
                                 )}

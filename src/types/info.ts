@@ -14,6 +14,8 @@ export const NAVLINKS = [
 ]
 
 export const colors = ["#B90043", "#E100FF"]
+
+const GITHUB_URL = "https://github.com/roxshivamsingh";
 export const info = {
   firstName: "Shivam",
   lastName: "Singh",
@@ -46,7 +48,7 @@ export const info = {
   ],
   social: {
     linkedin: "https://linkedin.com/in/roxshivamsingh",
-    github: "https://github.com/roxshivamsingh"
+    github: GITHUB_URL
   },
 
 
@@ -106,7 +108,7 @@ export const PROJECT_OPTIONS = [
     technologies: ["React.js", "TypeScript", "Firebase", "MUI"],
     link: {
       github: "https://github.com/digitalphora/devgpt-contentright",
-      live: "https://devgpt-contentright.vercel.app/"
+      live: "https://devgpt-contentright.vercel.app"
     }
   },
   {
@@ -114,10 +116,9 @@ export const PROJECT_OPTIONS = [
     cover: "https://play-lh.googleusercontent.com/GuHDoYst1TFXTngf4aWaJl_joG0kO6DhzOaIqNlWMrha915Zcxz50Ur-UWdngHb3oyg",
     description: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
     technologies: ["React.js", "TypeScript", "Firebase", "MUI"],
-
     link: {
-      github: "https://github.com/roxshivamsingh/shorts",
-      live: "https://devgpt-contentright.vercel.app/"
+      github: `${GITHUB_URL}/shorts`,
+      live: "https://devgpt-contentright.vercel.app"
     }
   },
   {
@@ -127,7 +128,7 @@ export const PROJECT_OPTIONS = [
     technologies: ["Laravel", "PHP", "MySQL", "Composer", "Bootstrap"],
 
     link: {
-      github: "https://github.com/roxshivamsingh/shorts",
+      github: `${GITHUB_URL}/quesu`,
       live: ""
     }
   },
@@ -138,7 +139,7 @@ export const PROJECT_OPTIONS = [
     technologies: ["Node.js", "React.js", "TypeScript", "MUI"],
 
     link: {
-      github: "https://github.com/roxshivamsingh/videoshare",
+      github: `${GITHUB_URL}/videoshare`,
       live: "https://videoshare-ashy.vercel.app/"
     }
   },
@@ -158,8 +159,8 @@ export const PROJECT_OPTIONS = [
     description: "The carbon cell is the dashboard UI. My Carbon Cell company conducted an assessment but they did not even look at which candidate had mimicked the UI so well.",
     technologies: ["Node.js", "React.js", "TypeScript", "MUI"],
     link: {
-      github: "https://github.com/roxshivamsingh/cuddly-robot",
-      live: "https://cuddly-robot.vercel.app/"
+      github: `${GITHUB_URL}/cuddly-robot`,
+      live: "https://cuddly-robot.vercel.app"
     }
   },
 ]

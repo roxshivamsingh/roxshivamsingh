@@ -14,7 +14,6 @@ export default function Home() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
-
   return (<Box
     component="main"
     sx={{
