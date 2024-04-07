@@ -33,7 +33,6 @@ export function authentication() {
     const msg = "Please configure valid auth credentials";
     if (data.email?.length && data.password?.length) {
         signInWithEmailAndPassword(auth, data.email, data.password)
-        console.log("Success",);
     } else {
         console.log(msg);
     }

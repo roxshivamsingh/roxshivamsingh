@@ -1,12 +1,13 @@
+import { ReactElement } from "react"
+import { Outlet } from "react-router-dom";
 import classes from "./base-layout.module.scss";
 import Navbar from "../../components/navbar";
-import { Outlet } from "react-router-dom";
 import { Box, Fab, Fade, Grid, useScrollTrigger } from "@mui/material";
 import { KeyboardArrowUp as KeyboardArrowUpIcon } from "@mui/icons-material"
 
 interface IScrollTop {
   window?: () => Window;
-  children: React.ReactElement;
+  children: ReactElement;
 }
 
 
@@ -42,7 +43,7 @@ function ScrollTop(props: IScrollTop) {
     </Fade>
   );
 }
-export default function BaseLayout(props: IScrollTop) {
+export default function BaseLayout() {
 
   // const [darkMode, setDarkMode] = useState(true);
 
@@ -95,7 +96,7 @@ export default function BaseLayout(props: IScrollTop) {
           </Routes> */}
           <Outlet />
 
-          <ScrollTop {...props}>
+          <ScrollTop >
             <Fab size="small" aria-label="scroll back to top"
               // variant="dark"
               sx={{ background: "inherit", color: "white", border: "1px solid white" }}
