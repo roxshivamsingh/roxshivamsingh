@@ -13,6 +13,8 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
+
+
   return (<Box
     component="main"
     sx={{
@@ -59,7 +61,6 @@ export default function Home() {
       <Box
         display={"flex"}
         gap={matches ? "1.5rem" : "10px"}
-
         sx={{ p: { md: "0.8rem", sm: "0.5rem" } }}
         justifyContent={matches ? "left" : "center"}
         fontSize={{ xs: "2rem", md: "2.5rem" }}

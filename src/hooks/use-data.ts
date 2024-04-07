@@ -1,29 +1,12 @@
-import { collection, onSnapshot } from 'firebase/firestore';
-import { useAppDispatch } from '../redux';
-import { useEffect } from 'react';
-import { db } from '../config';
-import { IAuth } from '../types/auth';
-import { setAuth } from '../redux/slices/user.slice';
-export function useUser() {
+import { useAppSelector } from "../redux"
 
-}
+export function useUserData() {
 
-export function useFirestoreListenerUser() {
-    const dispatch = useAppDispatch();
+    const users = useAppSelector((state) => state.auth)
 
-    useEffect(() => {
-        const collectionRef = collection(db, `users`);
-        onSnapshot(collectionRef, ({ docs }) => {
-            const data: IAuth[] = [];
-            docs?.forEach((doc) => {
-                const row = doc.data();
-                data.push({
-                    ...row,
-                    id: doc.id,
-                } as unknown as IAuth);
-            });
+    return ({
+        loading: users === undefined,
+        user: users
+    })
 
-            dispatch(setAuth(data));
-        });
-    }, [dispatch]);
 }

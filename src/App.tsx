@@ -7,22 +7,16 @@ import '@fontsource/roboto/700.css';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useScrollToTop } from "./hooks/use-scroll-top";
-import { useFirestoreListenerUser } from "./hooks/use-data";
+import { useFirestoreListenerUser } from "./hooks/use-listener";
 
-const theme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
+const theme = createTheme({ palette: { mode: 'dark' } });
 
 function App() {
   useScrollToTop()
   useFirestoreListenerUser()
-  return (
-    <ThemeProvider theme={theme}>
-      <Router />
-    </ThemeProvider>
-  );
+  return (<ThemeProvider theme={theme}>
+    <Router />
+  </ThemeProvider>);
 }
 
 export default App;

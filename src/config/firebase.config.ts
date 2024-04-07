@@ -1,6 +1,10 @@
 import * as app from "firebase/app";
+import {
+    GoogleAuthProvider,
+    getAuth,
+    signInWithEmailAndPassword
+} from "firebase/auth";
 import * as firestore from "firebase/firestore";
-import * as auth from 'firebase/auth';
 import { getStorage } from 'firebase/storage';
 
 const credentials = {
@@ -12,7 +16,28 @@ const credentials = {
     appId: import.meta.env.VITE_APP_FIREBASE_APP_ID,
     measurementId: import.meta.env.VITE_APP_FIREBASE_MEASUREMENT_ID
 }
+
 const init = app.initializeApp(credentials);
+
+const auth = getAuth();
+
+export const provider = new GoogleAuthProvider();
+
+export function authentication() {
+
+    const data = {
+        email: import.meta.env.VITE_APP_FORM_EMAIL_USERNAME,
+        password: import.meta.env.VITE_APP_FORM_EMAIL_PASSWORD
+    }
+
+    const msg = "Please configure valid auth credentials";
+    if (data.email?.length && data.password?.length) {
+        signInWithEmailAndPassword(auth, data.email, data.password)
+        console.log("Success",);
+    } else {
+        console.log(msg);
+    }
+}
 export const config = firestore.getFirestore(init);
 export const db = config;
 export const storage = getStorage(init);

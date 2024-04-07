@@ -1,3 +1,4 @@
+import CarbonCellImage from "../assets/images/carbon-cell.png"
 export type TInfoPortfolio = {
   title: string,
   live: string,
@@ -35,7 +36,8 @@ export const info = {
     },
     {
       emoji: "job",
-      text: "React Developer at Sulovi Technologies",
+      text: "Senior Full-Stack Developer at IGSS",
+      link: 'https://www.igurusolutions.com'
     },
     {
       emoji: "email",
@@ -50,8 +52,8 @@ export const info = {
 
   bio:
     `
-    I am a React Developer at Sulovi Technologies Private Limited, where I create robust and innovative web applications using a wide array of technologies. I have a Bachelor of Technology degree in Computer Science Engineering from BSACET, Mathura.
-    At Sulovi, I spearheaded the development and maintenance of applications using React and Firebase, introducing features such as virtualization, WhatsApp cloud API integration, and no-internet functionality. I also implemented a Google Cloud function as a microservice for backend tasks using Python, and migrated the Redux legacy pipeline to Redux Toolkit. I collaborated with other developers, tested the code quality, and documented the features and functionalities. I am always eager to learn new skills, enhance my existing ones, and deliver efficient solutions.
+    As a Senior Full Stack Developer at iGuru Software Solutions Pvt. Ltd., I create robust and innovative web applications using a wide array of technologies. I have a Bachelor of Technology degree in Computer Science Engineering from BSACET, Mathura.
+    At my previous role at Sulovi Technologies Private Limited, I spearheaded the development and maintenance of applications using React and Firebase, introducing features such as virtualization, WhatsApp cloud API integration, and no-internet functionality. I also implemented a Google Cloud function as a microservice for backend tasks using Python, and migrated the Redux legacy pipeline to Redux Toolkit. I collaborated with other developers, tested the code quality, and documented the features and functionalities. I am always eager to learn new skills, enhance my existing ones, and deliver efficient solutions.
   `  ,
   skills: {
     proficientWith: [
@@ -148,6 +150,16 @@ export const PROJECT_OPTIONS = [
     link: {
       github: "",
       live: "https://royalindiashop.com"
+    }
+  },
+  {
+    label: 'Carbon Cell UI',
+    cover: CarbonCellImage,
+    description: "The carbon cell is the dashboard UI. My Carbon Cell company conducted an assessment but they did not even look at which candidate had mimicked the UI so well.",
+    technologies: ["Node.js", "React.js", "TypeScript", "MUI"],
+    link: {
+      github: "https://github.com/roxshivamsingh/cuddly-robot",
+      live: "https://cuddly-robot.vercel.app/"
     }
   },
 ]
