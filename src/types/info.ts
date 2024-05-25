@@ -1,4 +1,3 @@
-import CarbonCellImage from "../assets/images/carbon-cell.png"
 export type TInfoPortfolio = {
   title: string,
   live: string,
@@ -100,67 +99,3 @@ export const info = {
 
 
 
-export const PROJECT_OPTIONS = [
-  {
-    label: 'Content Right',
-    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrGbYVybUZXBmSFDktnjGZk-OCMqDgzQSpMCay2xoAQ&s",
-    description: "Chat app like Chat-GPT with Google social login and manual login. When we    enter a prompt, it will give an output in video format. Based on React.js,    Firebase, Redux-Toolkit Material-UI. This app still in development.",
-    technologies: ["React.js", "TypeScript", "Firebase", "MUI"],
-    link: {
-      github: "https://github.com/digitalphora/devgpt-contentright",
-      live: "https://devgpt-contentright.vercel.app"
-    }
-  },
-  {
-    label: 'Shorts',
-    cover: "https://play-lh.googleusercontent.com/GuHDoYst1TFXTngf4aWaJl_joG0kO6DhzOaIqNlWMrha915Zcxz50Ur-UWdngHb3oyg",
-    description: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
-    technologies: ["React.js", "TypeScript", "Firebase", "MUI"],
-    link: {
-      github: `${GITHUB_URL}/shorts`,
-      live: "https://devgpt-contentright.vercel.app"
-    }
-  },
-  {
-    label: 'QuesU',
-    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwrlhkzU7yw7uOqgryO_EhDKpnbLePrqIX8EKQxLYkmQ&s",
-    description: "StackOverflow-like apps contain manual login. Create a question, answers, and rate them. Built on Laravel, Bootstrap, and MySQL.",
-    technologies: ["Laravel", "PHP", "MySQL", "Composer", "Bootstrap"],
-
-    link: {
-      github: `${GITHUB_URL}/quesu`,
-      live: ""
-    }
-  },
-  {
-    label: 'VideoShare',
-    cover: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ78Yr9IX28mmCnEYoddY4BecelTNqTEO56CsnKYFpUfQ&s",
-    description: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
-    technologies: ["Node.js", "React.js", "TypeScript", "MUI"],
-
-    link: {
-      github: `${GITHUB_URL}/videoshare`,
-      live: "https://videoshare-ashy.vercel.app/"
-    }
-  },
-  {
-    label: 'RoyalIndiaShop',
-    cover: "https://w7.pngwing.com/pngs/75/407/png-transparent-hand-holding-shopping-bag-silhouette-illustration-online-shopping-shopping-bag-logo-coupon-business-shopping-bags-business-woman-rectangle-retail-thumbnail.png",
-    description: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
-    technologies: ["Laravel", "Bootstrap", "PHP", "MySQL", "NGINX"],
-    link: {
-      github: "",
-      live: "https://royalindiashop.com"
-    }
-  },
-  {
-    label: 'Carbon Cell UI',
-    cover: CarbonCellImage,
-    description: "The carbon cell is the dashboard UI. My Carbon Cell company conducted an assessment but they did not even look at which candidate had mimicked the UI so well.",
-    technologies: ["Node.js", "React.js", "TypeScript", "MUI"],
-    link: {
-      github: `${GITHUB_URL}/cuddly-robot`,
-      live: "https://cuddly-robot.vercel.app"
-    }
-  },
-]
