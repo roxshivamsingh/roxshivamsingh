@@ -5,11 +5,8 @@ import { Box } from "@mui/material";
 import { info } from "../../types/info";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import {
-  LinkedIn as LinkedInIcon,
-  GitHub as GitHubIcon
-} from '@mui/icons-material';
 import { Link } from "react-router-dom";
+import { Iconify } from "../../components/iconify";
 export default function Home() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
@@ -64,12 +61,11 @@ export default function Home() {
         justifyContent={matches ? "left" : "center"}
         fontSize={{ xs: "2rem", md: "2.5rem" }}
       >
-
         <Link target="_blank" to={info.social.linkedin} >
-          <LinkedInIcon fontSize="large" />
+          <Iconify icon='line-md:linkedin' width={40} />
         </Link>
         <Link target="_blank" to={info.social.github} >
-          <GitHubIcon fontSize="large" />
+          <Iconify icon="line-md:github-loop" width={40} />
         </Link>
       </Box>
     </Box>

@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import classes from "./base-layout.module.scss";
 import Navbar from "../../components/navbar";
 import { Box, Fab, Fade, Grid, useScrollTrigger } from "@mui/material";
-import { KeyboardArrowUp as KeyboardArrowUpIcon } from "@mui/icons-material"
+import { Iconify } from "../../components/iconify";
 
 interface IScrollTop {
   window?: () => Window;
@@ -101,7 +101,7 @@ export default function BaseLayout() {
               // variant="dark"
               sx={{ background: "inherit", color: "white", border: "1px solid white" }}
             >
-              <KeyboardArrowUpIcon />
+              <Iconify icon='oui:arrow-up' />
             </Fab>
           </ScrollTop>
         </Grid>
