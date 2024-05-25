@@ -47,7 +47,7 @@ export default function Home() {
         ))}
       </Box>
       <Box
-        display={"flex"}
+        display="flex"
         gap={matches ? "1.5rem" : "10px"}
         sx={{ p: { md: "0.8rem", sm: "0.5rem" } }}
         justifyContent={matches ? "left" : "center"}
@@ -61,20 +61,18 @@ export default function Home() {
         </Link>
 
         <HtmlTooltip
-          title={
-            <>
-              <Typography fontFamily='Pacifico' gutterBottom>Download Resume</Typography>
-              <b>Name:</b> <em>shivam-singh-nodejs.pdf</em>
-              <br />
-              <b>{"Updated At:"}</b> <em>{'25/05/2024, at 10:00 PM'}</em>
-            </>
+          title={<>
+            <Typography fontFamily='Pacifico' gutterBottom>Download Resume</Typography>
+            <b>Name:</b> <em>shivam-singh-nodejs.pdf</em>
+            <br />
+            <b>{"Updated At:"}</b> <em>{'25/05/2024, at 10:00 PM'}</em>
+          </>
           }
         >
-          <Link target="_blank" to='' >
+          <Link target="_blank" to='' style={{ cursor: "pointer" }}>
             <Iconify icon='prime:file-pdf' width={40} sx={SX.IconResume} />
           </Link>
         </HtmlTooltip>
-
       </Box>
     </Box>
   </Box >

@@ -14,12 +14,8 @@ export function useFirestoreListenerUser() {
             const data: IAuth[] = [];
             docs?.forEach((doc) => {
                 const row = doc.data();
-                data.push({
-                    ...row,
-                    id: doc.id,
-                } as unknown as IAuth);
+                data.push({ ...row, id: doc.id } as unknown as IAuth);
             });
-
             dispatch(setAuth(data));
         });
     }, [dispatch]);
