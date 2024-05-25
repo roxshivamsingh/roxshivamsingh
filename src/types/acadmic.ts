@@ -12,6 +12,7 @@ export interface IAcadmicItem {
 
 export type TAcadmicItemName = { abbrivation: string, value: string }
 
+// ==========================================================================
 
 export const _acadmics: IAcadmicItem[] = [
     {
