@@ -9,22 +9,12 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useScrollToTop } from "./hooks/use-scroll-top";
 import { useFirestoreListenerUser } from "./hooks/use-listener";
 
-const theme = createTheme({
-  palette: {
-    mode: 'dark',
-
-    primary: {
-      main: '#1976d2',
-    },
-
-  },
-
-
-});
+const theme = createTheme({ palette: { mode: 'dark', primary: { main: '#1976d2' } } });
 
 function App() {
   useScrollToTop()
   useFirestoreListenerUser()
+
   return (<ThemeProvider theme={theme}>
     <Router />
   </ThemeProvider>);
