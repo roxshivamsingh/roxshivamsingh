@@ -12,7 +12,8 @@ import {
     CardHeader,
     Tooltip,
 } from '@mui/material';
-import { GitHub as GitHubIcon } from '@mui/icons-material';
+import { Iconify } from "../../components/iconify";
+
 import { PROJECT_OPTIONS } from '../../types/info';
 import { Link } from 'react-router-dom';
 
@@ -40,7 +41,7 @@ export default function Project() {
                                 target='_blank'
                                 disabled={!row.link.github?.length}
                             >
-                                <GitHubIcon fontSize='small' />
+                                <Iconify icon="mdi:github" />
                             </IconButton>}
                             title={<Typography
                                 component={row.link.live ? Link : 'span'}
