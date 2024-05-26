@@ -31,6 +31,7 @@ export const _base: IBase = {
         { title: 'LinkedIn', link: 'https://facebook.com/roxshivamsingh' },
         { title: 'Portfolio', link: 'https://roxshivamsingh.vercel.com' },
         { title: 'Resume', link: 'https://roxshivamsingh.vercel.com' },
+        { title: 'Profile', link: 'https://roxshivamsingh.vercel.com' },
     ],
     email: 'roxshivamsingh@gmail.com',
     address: {
