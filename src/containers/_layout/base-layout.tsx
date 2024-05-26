@@ -84,24 +84,32 @@ export default function BaseLayout() {
       minHeight={"100vh"}
       justifyContent={"space-between"}
     >
-      <Grid item id="back-to-top-anchor">
-        <Navbar
-        // darkMode={darkMode}
-        // handleClick={handleToggleDarkMode}
-        />
-      </Grid>
-      <Grid item flexGrow={1}>
-        {auth.status === ReduxStatusEnum.Loading ? <Box
+
+      {auth.status === ReduxStatusEnum.Loading ? <Grid item>
+
+        <Box
           sx={SX.Progress}
         >
           <CircularProgress color="inherit" />
-        </Box> : <Outlet />}
-        <ScrollTop>
-          <Fab size="small" aria-label="scroll back to top" sx={SX.MoveToTop}>
-            <Iconify icon='oui:arrow-up' />
-          </Fab>
-        </ScrollTop>
-      </Grid>
+        </Box>
+      </Grid> : <>
+        <Grid item id="back-to-top-anchor">
+          <Navbar
+          // darkMode={darkMode}
+          // handleClick={handleToggleDarkMode}
+          />
+        </Grid>
+        <Grid item flexGrow={1}>
+
+          <Outlet />
+          <ScrollTop>
+            <Fab size="small" aria-label="scroll back to top" sx={SX.MoveToTop}>
+              <Iconify icon='oui:arrow-up' />
+            </Fab>
+          </ScrollTop>
+        </Grid>
+      </>}
+
       {/* <Grid item>
           <Box
             component={"footer"}
@@ -125,7 +133,7 @@ export default function BaseLayout() {
 
 const SX: { [key: string]: SxProps } = {
   Progress: {
-    height: "80vh",
+    height: "100vh",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
