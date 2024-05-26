@@ -1,13 +1,22 @@
-import { ReactElement } from "react"
 import { Outlet } from "react-router-dom";
 import classes from "./base-layout.module.scss";
 import Navbar from "../../components/navbar";
-import { Box, Fab, Fade, Grid, useScrollTrigger } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  Fab,
+  Fade,
+  Grid,
+  SxProps,
+  useScrollTrigger
+} from "@mui/material";
 import { Iconify } from "../../components/iconify";
+import { useAppSelector } from "../../redux";
+import { ReduxStatusEnum } from "../../types/redux";
 
 interface IScrollTop {
   window?: () => Window;
-  children: ReactElement;
+  children: React.ReactElement;
 }
 
 
@@ -31,16 +40,15 @@ function ScrollTop(props: IScrollTop) {
     }
   };
 
-  return (
-    <Fade in={trigger}>
-      <Box
-        onClick={handleClick}
-        role="presentation"
-        sx={{ position: 'fixed', bottom: 16, right: 16 }}
-      >
-        {children}
-      </Box>
-    </Fade>
+  return (<Fade in={trigger}>
+    <Box
+      onClick={handleClick}
+      role="presentation"
+      sx={{ position: 'fixed', bottom: 16, right: 16 }}
+    >
+      {children}
+    </Box>
+  </Fade>
   );
 }
 export default function BaseLayout() {
@@ -63,49 +71,38 @@ export default function BaseLayout() {
   //     localStorage.setItem("darkMode", "false");
   //   }
   // }, []);
+  const auth = useAppSelector((state) => state.auth);
 
-  return (
-    <Box
-      className={classes.dark}
-    // className={darkMode ? classes.dark : classes.light}
+  return (<Box
+    className={classes.dark}
+  // className={darkMode ? classes.dark : classes.light}
+  >
+    <Grid
+      container
+      display={"flex"}
+      flexDirection={"column"}
+      minHeight={"100vh"}
+      justifyContent={"space-between"}
     >
-      <Grid
-        container
-        display={"flex"}
-        flexDirection={"column"}
-        minHeight={"100vh"}
-        justifyContent={"space-between"}
-      >
-        <Grid item id="back-to-top-anchor">
-          <Navbar
-
-          // darkMode={darkMode}
-          // handleClick={handleToggleDarkMode}
-          />
-        </Grid>
-        <Grid item flexGrow={1}>
-          {/* <Routes>
-            <Route exact path={"/"} element={<Home />} />
-            <Route exact path={"/about"} element={<About />} />
-            <Route exact path={"/portfolio"} element={<Portfolio />} />
-            <Route
-              exact
-              path={"/project-not-live"}
-              element={<ProjectNotLive />}
-            />
-          </Routes> */}
-          <Outlet />
-
-          <ScrollTop >
-            <Fab size="small" aria-label="scroll back to top"
-              // variant="dark"
-              sx={{ background: "inherit", color: "white", border: "1px solid white" }}
-            >
-              <Iconify icon='oui:arrow-up' />
-            </Fab>
-          </ScrollTop>
-        </Grid>
-        {/* <Grid item>
+      <Grid item id="back-to-top-anchor">
+        <Navbar
+        // darkMode={darkMode}
+        // handleClick={handleToggleDarkMode}
+        />
+      </Grid>
+      <Grid item flexGrow={1}>
+        {auth.status === ReduxStatusEnum.Loading ? <Box
+          sx={SX.Progress}
+        >
+          <CircularProgress color="inherit" />
+        </Box> : <Outlet />}
+        <ScrollTop>
+          <Fab size="small" aria-label="scroll back to top" sx={SX.MoveToTop}>
+            <Iconify icon='oui:arrow-up' />
+          </Fab>
+        </ScrollTop>
+      </Grid>
+      {/* <Grid item>
           <Box
             component={"footer"}
             display={"flex"}
@@ -121,7 +118,22 @@ export default function BaseLayout() {
             <p>&copy; {new Date().getFullYear()}</p>
           </Box>
         </Grid> */}
-      </Grid>
-    </Box>
+    </Grid>
+  </Box >
   );
+}
+
+const SX: { [key: string]: SxProps } = {
+  Progress: {
+    height: "80vh",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  MoveToTop: {
+    background: "inherit",
+    color: "white",
+    border: "1px solid white"
+  }
 }

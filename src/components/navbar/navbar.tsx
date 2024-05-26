@@ -37,18 +37,18 @@ export default function NavBar() {
         </Typography>
 
         <Stack direction='row' spacing={2}>
-          {NAVLINKS.map((item) => {
-            const isActive = item.path === pathname
-            return (<Box key={item.path}
+          {NAVLINKS.map(({ path, label }) => {
+            const isActive = path === pathname
+            return (<Box key={path}
               component={Link}
-              href={item.path}
+              href={path}
               sx={{
                 ...SX.NavLink,
                 borderImageSource: isActive ? info.gradient : 'none',
               }}
               className={isActive ? classes.active : ''}
             >
-              {item.label}
+              {label}
             </Box>
             )
           })}
