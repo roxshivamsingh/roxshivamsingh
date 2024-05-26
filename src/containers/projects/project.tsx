@@ -48,13 +48,8 @@ export default function Project() {
                 </Stack>
             </CardContent>
             <CardActions>
-                <Stack direction='row' gap={1}>
-                    {row?.technologies?.map((technology, j) =>
-                        <Chip label={technology}
-                            size='small'
-                            key={j}
-                        />
-                    )}
+                <Stack direction='row' gap={0.5}>
+                    {row?.technologies?.map((label, j) => <Chip label={label} size='small' key={j} />)}
                 </Stack>
                 {/* <Button size="small">Share</Button> */}
                 {/* <Button size="small">Learn More</Button> */}
