@@ -3,7 +3,6 @@ import classes from "./base-layout.module.scss";
 import Navbar from "../../components/navbar";
 import {
   Box,
-  CircularProgress,
   Fab,
   Fade,
   Grid,
@@ -86,11 +85,10 @@ export default function BaseLayout() {
     >
 
       {auth.status === ReduxStatusEnum.Loading ? <Grid item>
-
-        <Box
-          sx={SX.Progress}
-        >
-          <CircularProgress color="inherit" />
+        <Box sx={SX.Progress}>
+          <Iconify icon='line-md:loading-loop' width={80}
+            sx={{ color: '#E100FF' }}
+          />
         </Box>
       </Grid> : <>
         <Grid item id="back-to-top-anchor">
