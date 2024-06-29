@@ -1,22 +1,60 @@
-import { Box, Typography } from '@mui/material';
+import {
+    Typography,
+    Container,
+    Link,
+    SxProps,
+    Box
+} from '@mui/material';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
+// =======================================================================
+
 import illustration from "./not-found.png"
+
 export default function NotFound() {
-
-    return (
-        <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" minHeight="100vh">
-            <Box mb={3}>
-                <img src={illustration} alt="Random" style={{
-                    maxWidth: '100%',
-                    borderRadius: '8px',
-                    background: "inherit",
-                    // mixBlendMode: "multiply"
-                }} />
-            </Box>
-            <Typography variant="h4" gutterBottom>
-                Not found.
-            </Typography>
-
-        </Box>
+    return (<Container maxWidth="lg" sx={SX.Container}>
+        <Typography variant="h1" component="h1" sx={SX.Title}>
+            404: Not Found
+        </Typography>
+        <Box component={LazyLoadImage} src={illustration} alt="" sx={SX.Image} />
+        <Typography variant="body1" sx={SX.Msg}>
+            The page you requested could not be found.
+        </Typography>
+        <Link href="/" sx={SX.BackButton}>
+            Go back to the homepage
+        </Link>
+    </Container>
     );
 }
+
+
+const SX: { [key: string]: SxProps } = {
+    Container: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+    },
+    Title: {
+        fontSize: '48px',
+        fontWeight: 'bold',
+        marginBottom: '24px',
+    },
+    Image: {
+        maxWidth: '100%',
+        borderRadius: '8px',
+        background: "inherit",
+        // mixBlendMode: "multiply"
+    },
+    Msg: {
+        fontSize: '20px',
+        marginBottom: '24px',
+    },
+    BackButton: {
+        fontSize: '18px',
+        textDecoration: 'none',
+        color: 'primary.main',
+    }
+} as const
 
