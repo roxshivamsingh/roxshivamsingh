@@ -1,9 +1,14 @@
+import { lazy, Suspense } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
-import Home from "../containers/home/Home";
 import About from "../containers/about/About";
 import Project from "../containers/projects/project";
-import BaseLayout from "../containers/_layout/base-layout";
 import NotFound from "../containers/not-found/not-found";
+import BaseLayout from "../containers/_layout/base-layout";
+
+const Home = lazy(() => import("../containers/home"))
+const Resume = lazy(() => import("../containers/resume"))
+
+
 export default function Router() {
 
     return useRoutes([{
@@ -12,7 +17,7 @@ export default function Router() {
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: (<Suspense><Home /></Suspense>)
             },
             {
                 path: 'about',
@@ -27,9 +32,14 @@ export default function Router() {
                 element: <Project />
             },
             {
+                path: 'resume',
+                element: <Suspense><Resume /></Suspense>
+            },
+            {
                 path: '/not-found',
                 element: <NotFound />
             },
+
             {
                 path: '*',
                 element: <Navigate to="/not-found" replace />

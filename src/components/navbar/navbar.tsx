@@ -1,5 +1,5 @@
-import classes from "./Navbar.module.scss";
-import { NAVLINKS, info } from '../../types/info';
+import { useEffect, useState } from "react";
+
 import {
   Box,
   Stack,
@@ -10,7 +10,11 @@ import {
   SxProps
 } from '@mui/material';
 import { useLocation } from 'react-router-dom';
-import { useEffect, useState } from "react";
+// =======================================================================
+
+import classes from "./navbar.module.scss";
+import { NAVLINKS, info } from '../../types/info';
+import { Iconify } from "../iconify";
 
 export default function NavBar() {
 
@@ -36,23 +40,26 @@ export default function NavBar() {
           &lt;roxshivamsingh /&gt;
         </Typography>
 
-        <Stack direction='row' spacing={2}>
-          {NAVLINKS.map(({ path, label }) => {
-            const isActive = path === pathname
-            return (<Box key={path}
+        <Box component={Stack} direction='row' spacing={{ lg: 3, md: 2, sm: 2, xs: 1 }}>
+          {NAVLINKS.map((row, i) => {
+            const isActive = row.path === pathname
+            return (<Box key={i}
               component={Link}
-              href={path}
+              href={row.path}
               sx={{
                 ...SX.NavLink,
                 borderImageSource: isActive ? info.gradient : 'none',
               }}
               className={isActive ? classes.active : ''}
             >
-              {label}
+              <Iconify icon={row.icon}
+                sx={{ display: { lg: 'block', md: 'none', sm: 'none', xs: 'none' } }}
+              />
+              {row.label}
             </Box>
             )
           })}
-        </Stack>
+        </Box>
       </Toolbar>
     </AppBar>
     <Box sx={{ mt: 10 }} />
@@ -79,6 +86,10 @@ const SX: { [key: string]: SxProps } = {
     fontSize: { lg: 30, sm: 20 }
   },
   NavLink: {
+    display: "flex",
+    flexDirection: "row",
+    gap: 0.5,
+    // alignItems: "center",
     color: 'inherit',
     fontWeight: 700,
     textDecoration: "none",

@@ -1,35 +1,32 @@
-import classes from "./Home.module.scss";
+import { Link } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
+import { SxProps } from "@mui/material/styles";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
+// =======================================================================
+
+import classes from "./home.module.scss";
 import EmojiBullet from "../../components/emoji-bullet/emoji-bullet";
 import passport from "../../assets/images/photo.png";
-import { Box, Typography } from "@mui/material";
+
 import { info } from "../../types/info";
-import { SxProps, useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { Link } from "react-router-dom";
 import { Iconify } from "../../components/iconify";
 import HtmlTooltip from "../../components/html-tooltip";
+
 export default function Home() {
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
   return (<Box component="main" sx={SX.Container}>
     <Box
       className={[classes.avatar, classes.shadowed, classes.floating].join(' ')}
       alt={"image of developer"}
       style={{ background: info.gradient }}
-      component={"img"}
+      component={LazyLoadImage}
       src={passport}
-      width={{ xs: "35vh", md: "40vh" }}
-      height={{ xs: "35vh", md: "40vh" }}
-      borderRadius={"50%"}
-      p={"0.75rem"}
-      mb={{ xs: "1rem", sm: 0 }}
-      mr={{ xs: 0, md: "2rem" }}
+      sx={SX.Passport}
     />
     <Box>
       <h1>
-        Hi, I'm{" "}
-        <span
+        Hi, I'm <span
           style={{
             background: info.gradient,
             WebkitBackgroundClip: "text",
@@ -47,11 +44,8 @@ export default function Home() {
         ))}
       </Box>
       <Box
-        display="flex"
-        gap={matches ? "1.5rem" : "10px"}
-        sx={{ p: { md: "0.8rem", sm: "0.5rem" } }}
-        justifyContent={matches ? "left" : "center"}
-        fontSize={{ xs: "2rem", md: "2.5rem" }}
+
+        sx={SX.Icons}
       >
         <Link target="_blank" to={info.social.linkedin} >
           <Iconify icon='line-md:linkedin' width={40} />
@@ -92,5 +86,20 @@ const SX: { [key: string]: SxProps } = {
     "&:hover": {
       color: "red"
     }
+  },
+  Icons: {
+    display: "flex",
+    gap: { sm: '10px', xs: '10px', md: '1.5rem', lg: '1.5rem' },
+    p: { md: "0.8rem", sm: "0.5rem" },
+    justifyContent: { lg: 'left', xs: 'center', sm: 'center', md: 'center' },
+    fontSize: { xs: "2rem", md: "2.5rem" }
+  },
+  Passport: {
+    width: { xs: "35vh", md: "40vh" },
+    height: { xs: "35vh", md: "40vh" },
+    borderRadius: '50%',
+    p: '0.75rem',
+    mb: { xs: "1rem", sm: 0 },
+    mr: { xs: 0, md: "2rem" }
   }
 }
