@@ -78,7 +78,6 @@ const SX: { [key: string]: SxProps } = {
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     color: "inherit",
-    // textDecoration: "none",
     fontFamily: 'Pacifico',
     "&:hover": {
       textDecoration: "underline",
