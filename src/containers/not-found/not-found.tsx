@@ -9,14 +9,14 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // =======================================================================
 
-import illustration from "./not-found.png"
+import NotFoundImage from "./not-found.png"
 
 export default function NotFound() {
     return (<Container maxWidth="lg" sx={SX.Container}>
         <Typography variant="h1" component="h1" sx={SX.Title}>
             404: Not Found
         </Typography>
-        <Box component={LazyLoadImage} src={illustration} alt="" sx={SX.Image} />
+        <Box component={LazyLoadImage} src={NotFoundImage} alt="" sx={SX.Image} />
         <Typography variant="body1" sx={SX.Msg}>
             The page you requested could not be found.
         </Typography>

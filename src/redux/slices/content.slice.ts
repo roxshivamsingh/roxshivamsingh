@@ -1,32 +1,32 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { IAuth } from "../../types/auth";
+import { IContentItem } from "../../types/content";
 import { ReduxStatusEnum, TReduxStatus } from '../../types/redux';
 
-interface IAuthSlice {
-    value: IAuth[] | undefined;
+interface IContentSlice {
+    value: IContentItem[];
     status: TReduxStatus;
     error: null | string | undefined;
 }
 
-const initialState: IAuthSlice = {
-    value: undefined,
+const initialState: IContentSlice = {
+    value: [],
     status: ReduxStatusEnum.Loading,
     error: null,
 };
 
 const AuthSlice = createSlice({
-    name: 'auth',
+    name: 'Contents',
     initialState,
     reducers: {
-        setAuth: (state, action: PayloadAction<IAuth[]>) => {
+        setContents: (state, action: PayloadAction<IContentItem[]>) => {
             state.status = ReduxStatusEnum.Success;
             state.value = action.payload;
         },
     },
 });
 
-export const { setAuth } = AuthSlice.actions;
+export const { setContents } = AuthSlice.actions;
 
 const AuthReducer = AuthSlice.reducer;
-export default AuthReducer
+export default AuthReducer;

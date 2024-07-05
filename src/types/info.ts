@@ -12,8 +12,8 @@ export const NAVLINKS: TNavLinkItem[] = [
   { label: 'Home', path: '/', icon: 'carbon:home' },
   { label: 'About', path: '/about', icon: 'ph:user' },
   { label: 'Projects', path: '/projects', icon: 'icon-park-outline:ppt' },
-  // { label: 'Resume', path: '/resume', icon: 'iconamoon:file-document-thin' },
-  // { label: 'Blogs', path: '/blogs', icon: 'icomoon-free:blog' },
+  { label: 'Resume', path: '/resume', icon: 'iconamoon:file-document-thin' },
+  { label: 'Blogs', path: '/blogs', icon: 'icomoon-free:blog' },
 
 ]
 

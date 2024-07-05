@@ -70,7 +70,7 @@ export default function BaseLayout() {
   //     localStorage.setItem("darkMode", "false");
   //   }
   // }, []);
-  const auth = useAppSelector((state) => state.auth);
+  const auth = useAppSelector((state) => state.Auth);
 
   return (<Box
     className={classes.dark}

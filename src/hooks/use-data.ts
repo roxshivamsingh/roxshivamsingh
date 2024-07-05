@@ -2,7 +2,7 @@ import { useAppSelector } from "../redux"
 
 export function useUserData() {
 
-    const users = useAppSelector((state) => state.auth)
+    const users = useAppSelector((state) => state.Auth)
 
     return ({
         loading: users === undefined,
