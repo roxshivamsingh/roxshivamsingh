@@ -11,3 +11,9 @@ frfr @Qwerty@5149 ffrfr
     "points":[],
     "resumeUrl":""
 }
+
+npm i -g firebase-tools
+firebase login
+# firebase login --reauth
+
+firebase init

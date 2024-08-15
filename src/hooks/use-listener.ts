@@ -33,7 +33,7 @@ export function useFirestoreListenerContents() {
             const data: IContentItem[] = [];
             docs?.forEach((doc) => {
                 const row = doc.data();
-                data.push({ ...row, id: doc.id } as unknown as IAuth);
+                data.push({ ...row, id: doc.id } as unknown as IContentItem);
             });
             dispatch(setContents(data));
         });

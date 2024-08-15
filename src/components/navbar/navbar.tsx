@@ -3,13 +3,12 @@ import { useEffect, useState } from "react";
 import {
   Box,
   Stack,
-  Link,
   AppBar,
   Toolbar,
   Typography,
   SxProps
 } from '@mui/material';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 // =======================================================================
 
 import classes from "./navbar.module.scss";
@@ -45,7 +44,7 @@ export default function NavBar() {
             const isActive = row.path === pathname
             return (<Box key={i}
               component={Link}
-              href={row.path}
+              to={row.path}
               sx={{
                 ...SX.NavLink,
                 borderImageSource: isActive ? info.gradient : 'none',
