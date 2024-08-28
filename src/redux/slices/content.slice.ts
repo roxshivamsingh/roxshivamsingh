@@ -15,7 +15,7 @@ const initialState: IContentSlice = {
     error: null,
 };
 
-const AuthSlice = createSlice({
+const ContentSlice = createSlice({
     name: 'Contents',
     initialState,
     reducers: {
@@ -26,7 +26,7 @@ const AuthSlice = createSlice({
     },
 });
 
-export const { setContents } = AuthSlice.actions;
+export const { setContents } = ContentSlice.actions;
 
-const AuthReducer = AuthSlice.reducer;
-export default AuthReducer;
+const ContentReducer = ContentSlice.reducer;
+export default ContentReducer;
