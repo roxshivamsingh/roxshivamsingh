@@ -18,7 +18,6 @@ const credentials = {
 }
 
 const init = app.initializeApp(credentials);
-// console.log(credentials)
 const auth = getAuth();
 
 export const provider = new GoogleAuthProvider();
