@@ -2,6 +2,7 @@ import Style from "./About.module.scss";
 import Terminal from "../../components/terminal/Terminal";
 import { Box, Container, Typography } from "@mui/material";
 import { info } from "../../types/info";
+import AboutTimeline from "../../components/about-timeline";
 
 export default function About() {
   const renderAboutText = (<>
@@ -86,7 +87,13 @@ export default function About() {
           })}
 
         </Box>
+        <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
+          Experience
+        </Typography>
+        <AboutTimeline />
+
       </Container>
+
     </>
   );
 }
