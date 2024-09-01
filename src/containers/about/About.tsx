@@ -80,18 +80,18 @@ export default function About() {
           About
         </Typography>
         <Box sx={{ mt: "3rem" }}>
+
           {[renderAboutText, renderSkillText, renderMiscText]?.map((row, i) => {
             return (<Terminal key={i}>
               {row}
             </Terminal>)
           })}
+          <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
+            Experience
+          </Typography>
+          <AboutTimeline />
 
         </Box>
-        <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
-          Experience
-        </Typography>
-        <AboutTimeline />
-
       </Container>
 
     </>
