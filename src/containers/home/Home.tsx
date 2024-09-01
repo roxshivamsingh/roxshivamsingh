@@ -17,13 +17,15 @@ export default function Home() {
 
   return (<Box component="main" sx={SX.Container}>
     <Box
-      className={[classes.avatar, classes.shadowed, classes.floating].join(' ')}
-      alt={"image of developer"}
+      className={classes.floating}
+      alt="image of developer"
+      effect="blur"
       style={{ background: info.gradient }}
       component={LazyLoadImage}
       src={passport}
       sx={SX.Passport}
     />
+    {/* <div className={classes.home__img} /> */}
     <Box>
       <h1>
         Hi, I'm <span

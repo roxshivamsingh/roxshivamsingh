@@ -1,77 +1,131 @@
-@import "../../variables.modules";
+@import '../../variables.modules';
 
 h1 {
-  font-size: 2rem;
-  text-align: center;
-  @media only screen and (min-width: 940px) {
-    font-size: 3rem;
-    text-align: left;
-  }
+    font-size: 2rem;
+    text-align: center;
+    @media only screen and (min-width: 940px) {
+        font-size: 3rem;
+        text-align: left;
+    }
 }
 
 h2 {
-  font-size: 1.25rem;
-  text-align: center;
-  @media only screen and (min-width: 940px) {
-    font-size: 2rem;
-    text-align: left;
-  }
+    font-size: 1.25rem;
+    text-align: center;
+    @media only screen and (min-width: 940px) {
+        font-size: 2rem;
+        text-align: left;
+    }
 }
 
 .hand {
-  animation-name: wave;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
+    animation-name: wave;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
 }
 
 a {
-  color: $dark;
-  transition: color 200ms ease;
+    color: $dark;
+    // transition: color 200ms ease;
 }
 
 a:hover {
-  color: $lightgray;
-  transition: color 200ms ease;
+    color: $lightgray;
+    // transition: color 200ms ease;
 }
 
 @keyframes wave {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(14deg);
-  }
-  20% {
-    transform: rotate(-8deg);
-  }
-  30% {
-    transform: rotate(14deg);
-  }
-  40% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(14deg);
+    }
+    20% {
+        transform: rotate(-8deg);
+    }
+    30% {
+        transform: rotate(14deg);
+    }
+    40% {
+        transform: rotate(-4deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    60% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .floating {
-  animation: floatAnimation 3s ease infinite; /* Adjust the duration and easing as needed */
+    animation: floatAnimation 3s ease infinite; /* Adjust the duration and easing as needed */
+}
+
+@keyframes profile__animate {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+.home__img {
+    background: url(https://roxshivamsingh.com/assets/photo-DfI-n2nA.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* filter: grayscale(.5); */
+    box-shadow: inset 0 0 0 6px #b90064;
+
+    // box-shadow: inset 0 0 0 6px rgba(202, 81, 224, 0.3);
+
+    order: 1;
+    justify-self: center;
+    width: 400px;
+    height: 400px;
+    animation: profile__animate 8s ease-in-out infinite 1s;
 }
 
 @keyframes floatAnimation {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px); /* Adjust the floating height */
-  }
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Adjust the floating height */
+    }
+}
+/* BREAK POINTS */
+@media screen and (max-width: 992px) {
+    .home__img {
+        width: 250px;
+        height: 250px;
+        box-shadow: inset 0 0 0 6px #b90064;
+    }
+}
+@media screen and (max-width: 768px) {
+    .home__img {
+        order: initial;
+        justify-self: initial;
+        box-shadow: inset 0 0 0 6px #b90064;
+        // box-shadow: inset 0 0 0 6px rgb(225 225 225 / 30%);
+
+        width: 300px;
+        height: 300px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .home__img {
+        width: 200px;
+        height: 200px;
+    }
 }
