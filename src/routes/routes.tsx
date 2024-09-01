@@ -5,6 +5,7 @@ import About from "../containers/about/About";
 import Project from "../containers/projects/project";
 import NotFound from "../containers/not-found/not-found";
 import BaseLayout from "../containers/_layout/base-layout";
+import { CustomCircularProgress } from "../components";
 
 const Home = lazy(() => import("../containers/home"))
 const Resume = lazy(() => import("../containers/resume"))
@@ -18,11 +19,17 @@ export default function Router() {
         children: [
             {
                 path: '/',
-                element: (<Suspense><Home /></Suspense>)
+                element: (<Suspense
+                    fallback={<CustomCircularProgress />}
+                >
+                    <Home />
+                </Suspense>)
             },
             {
                 path: 'about',
-                element: <About />
+                element: <About
+
+                />
             },
             {
                 path: 'contact',
@@ -34,7 +41,10 @@ export default function Router() {
             },
             {
                 path: 'resume',
-                element: <Suspense><Resume /></Suspense>
+                element: <Suspense
+                    fallback={<CustomCircularProgress />}
+
+                ><Resume /></Suspense>
             },
             {
                 path: '/not-found',

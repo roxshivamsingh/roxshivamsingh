@@ -17,7 +17,7 @@ export default function Home() {
 
   return (<Box component="main" sx={SX.Container}>
     <Box
-      className={[classes.avatar, classes.shadowed, classes.floating].join(' ')}
+      className={classes.floating}
       alt="image of developer"
       effect="blur"
       style={{ background: info.gradient }}
@@ -25,6 +25,7 @@ export default function Home() {
       src={passport}
       sx={SX.Passport}
     />
+    {/* <div className={classes.home__img} /> */}
     <Box>
       <h1>
         Hi, I'm <span
