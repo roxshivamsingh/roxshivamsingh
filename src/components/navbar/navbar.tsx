@@ -53,7 +53,14 @@ export default function NavBar() {
               className={classNames}
             >
               <Iconify icon={row.icon}
-                sx={{ display: { lg: 'block', md: 'none', sm: 'none', xs: 'none' } }}
+                sx={{
+                  display: {
+                    lg: 'block',
+                    md: 'none',
+                    sm: 'none',
+                    xs: 'none'
+                  }
+                }}
               />
               {row.label}
             </Box>

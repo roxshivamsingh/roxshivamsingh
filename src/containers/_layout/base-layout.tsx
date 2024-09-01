@@ -12,6 +12,8 @@ import {
 import { Iconify } from "../../components/iconify";
 import { useAppSelector } from "../../redux";
 import { ReduxStatusEnum } from "../../types/redux";
+import { useMemo } from "react";
+import { CustomCircularProgress } from "../../components";
 
 interface IScrollTop {
   window?: () => Window;
@@ -60,7 +62,6 @@ export default function BaseLayout() {
   //   setDarkMode(oppositeOfCurrentDarkMode);
   // }
 
-
   // useEffect(() => {
   //   const detectedDarkMode = eval(localStorage.getItem("darkMode") || '');
 
@@ -72,6 +73,7 @@ export default function BaseLayout() {
   // }, []);
   const auth = useAppSelector((state) => state.Auth);
 
+  const isLoading = useMemo(() => auth.status === ReduxStatusEnum.Loading, [auth.status])
   return (<Box
     className={classes.dark}
   // className={darkMode ? classes.dark : classes.light}
@@ -83,13 +85,8 @@ export default function BaseLayout() {
       minHeight={"100vh"}
       justifyContent={"space-between"}
     >
-
-      {auth.status === ReduxStatusEnum.Loading ? <Grid item>
-        <Box sx={SX.Progress}>
-          <Iconify icon='line-md:loading-loop' width={80}
-            sx={{ color: '#E100FF' }}
-          />
-        </Box>
+      {isLoading ? <Grid item>
+        <CustomCircularProgress />
       </Grid> : <>
         <Grid item id="back-to-top-anchor">
           <Navbar
