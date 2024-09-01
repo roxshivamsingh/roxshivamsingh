@@ -7,7 +7,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 
 import Typography from '@mui/material/Typography';
 import { Iconify } from "../../components/iconify";
-import { Chip, Stack } from '@mui/material';
+import { Box, Chip, Stack } from '@mui/material';
 
 export default function AboutTimeline() {
     return (<Timeline
@@ -18,46 +18,12 @@ export default function AboutTimeline() {
                 padding: 0,
             },
         }}
-    // position="alternate"
-    // sx={{
-    //     [`& .${timelineOppositeContentClasses.root}`]: {
-    //         flex: 0,
-    //         padding: 0
-    //     },
-    // }}
     >
-        {/* <TimelineItem>
-            <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot>
-                    {rendomIcon}
-                </TimelineDot>
-                <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="h6" component="span">
-                    Eat
-                </Typography>
-                <Typography>Because you need strength</Typography>
-            </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-            <TimelineSeparator>
-                <TimelineConnector />
-                <TimelineDot color="primary">
-                    {rendomIcon}
-                </TimelineDot>
-                <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: '12px', px: 2 }}>
-                <Typography variant="h6" component="span">
-                    Code
-                </Typography>
-                <Typography>Because it&apos;s awesome!</Typography>
-            </TimelineContent>
-        </TimelineItem> */}
-
         {TIMELINE_OPTIONS?.map((item, i) => {
+            const args = {
+                isLastEl: (TIMELINE_OPTIONS?.length - 1 !== i),
+                isMidEl: !!(i && TIMELINE_OPTIONS?.length < (i + 1))
+            }
             return (<TimelineItem key={i}>
                 {/* <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
@@ -68,11 +34,11 @@ export default function AboutTimeline() {
                     </TimelineOppositeContent> */}
                 <TimelineSeparator>
                     {/* {i == 0 && (<TimelineDot color='secondary' />)} */}
-                    {!!(i && TIMELINE_OPTIONS?.length < i + 1) && (<TimelineConnector sx={{ bgcolor: 'secondary.main' }} />)}
+                    {args.isMidEl && (<TimelineConnector sx={{ bgcolor: 'secondary.main' }} />)}
                     <TimelineDot color="secondary">
-                        <Iconify icon='mdi:timer-sand' />
+                        <Iconify icon={item.icon} />
                     </TimelineDot>
-                    <TimelineConnector />
+                    {args.isLastEl && <TimelineConnector />}
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: '12px', borderRadius: "12px" }}>
                     <Stack>
@@ -83,9 +49,22 @@ export default function AboutTimeline() {
                             {item.role}
                         </Typography>
                     </Stack>
-                    <Stack direction='row' spacing={1}>
+                    <Box
+
+                        sx={{
+                            display: "flex",
+                            flexDirection: "row",
+                            gap: 1,
+                            flexWrap: 'wrap',
+                            justifyContent: {
+                                lg: "lft",
+                                xs: "left"
+                            },
+
+                        }}
+                    >
                         {item.technologies?.map((item, i) => <Chip label={item} size='small' key={i} />)}
-                    </Stack>
+                    </Box>
                     <Typography variant='caption'>{item.duration}</Typography>
                 </TimelineContent>
             </TimelineItem>)
@@ -100,6 +79,7 @@ const TIMELINE_OPTIONS = [
         role: 'React.js Developer',
         duration: 'April 2024 - Present',
         technologies: ['React.js', 'Laravel', 'PHP', 'Typescript', 'Redux-Toolkit'],
+        icon: 'mdi:company',
         align: 'left',
     },
     {
@@ -107,20 +87,31 @@ const TIMELINE_OPTIONS = [
         role: 'React.js Developer',
         duration: 'Aug 2022 - Feb 2024',
         technologies: ['React.js', 'Laravel', 'PHP', 'Typescript', 'Redux-Toolkit'],
+        icon: 'mdi:company',
         align: 'right',
     },
     {
         name: 'Sulovi Technologies Private Limited',
-        role: 'React.js Developer',
+        role: 'React.js Developer (Intern)',
         duration: 'Aug 2022 - Feb 2024',
         technologies: ['React.js', 'Laravel', 'PHP', 'Typescript', 'Redux-Toolkit'],
+        icon: 'mdi:company',
         align: 'left',
     },
     {
         name: 'Mekvahan',
-        role: 'React.js Developer',
+        role: 'React.js Developer (Intern)',
         duration: 'May 2020 - May 2021',
         technologies: ['React.js', 'Laravel', 'PHP', 'Typescript'],
+        icon: 'mdi:company',
+        align: 'right',
+    },
+    {
+        name: '',
+        role: '',
+        duration: '',
+        technologies: [],
+        icon: 'mdi:timer-sand',
         align: 'right',
 
     },

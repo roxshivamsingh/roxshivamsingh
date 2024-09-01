@@ -51,7 +51,7 @@ export default function EmojiBullet(props: IProps) {
       >
         <InfoIcon value={emoji} />
 
-      </Box>{" "}
+      </Box>
       {text}
     </Box>
   );
