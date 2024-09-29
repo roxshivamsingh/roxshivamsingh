@@ -1,7 +1,9 @@
-import Style from "./About.module.scss";
-import Terminal from "../../components/terminal/Terminal";
 import { Box, Container, Typography } from "@mui/material";
-import { info } from "../../types/info";
+// =======================================================================
+
+import Style from "./About.module.scss";
+import { info } from "../../types";
+import Terminal from "../../components/terminal/Terminal";
 import AboutTimeline from "../../components/about-timeline";
 
 export default function About() {
