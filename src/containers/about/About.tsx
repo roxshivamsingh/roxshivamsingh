@@ -4,7 +4,7 @@ import { Box, Container, Typography } from "@mui/material";
 import Style from "./About.module.scss";
 import { info } from "../../types";
 import Terminal from "../../components/terminal/Terminal";
-import AboutTimeline from "../../components/about-timeline";
+import { AboutAcadmics, AboutExperience } from "../../components";
 
 export default function About() {
   const renderAboutText = (<>
@@ -91,8 +91,11 @@ export default function About() {
           <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
             Experience
           </Typography>
-          <AboutTimeline />
-
+          <AboutExperience />
+          <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
+            Acadmics
+          </Typography>
+          <AboutAcadmics />
         </Box>
       </Container>
 
