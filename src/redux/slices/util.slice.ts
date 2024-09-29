@@ -21,10 +21,14 @@ const UtilSlice = createSlice({
             state.status = ReduxStatusEnum.Success;
             state.value = action.payload;
         },
+        setUtilViewPort: (state, action: PayloadAction<ViewportEnum>) => {
+            state.status = ReduxStatusEnum.Success;
+            state.value.viewport = action.payload;
+        },
     },
 });
 
-export const { setUtils } = UtilSlice.actions;
+export const { setUtils, setUtilViewPort } = UtilSlice.actions;
 
 const UtilReducer = UtilSlice.reducer;
 export default UtilReducer;

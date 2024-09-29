@@ -19,9 +19,7 @@ export default function AboutAcadmics() {
         <Grid2 size={{ xs: 0, sm: 0, md: 4, lg: 4 }} sx={{ display: "flex", flexDirection: "column", justifyContent: "center" }} >
             <LazyLoadImage src={illustration} effect='blur' style={{ width: "100%" }} />
         </Grid2>
-
         <Grid2 size={{ xs: 12, sm: 12, md: 8, lg: 8 }}>
-
             <Box
                 sx={{
                     display: 'flex',
