@@ -1,4 +1,4 @@
 import AuthReducer from "./user.slice";
 import ContentReducer from "./content.slice"
-
-export { AuthReducer, ContentReducer }
+import UtilReducer from "./util.slice";
+export { AuthReducer, ContentReducer, UtilReducer }

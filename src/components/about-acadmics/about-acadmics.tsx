@@ -6,12 +6,13 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { Stack, Typography, } from '@mui/material';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { CSSProperties } from 'react';
+
 // =======================================================================
 
 import { Iconify } from "../../components/iconify";
 import { ABOUT_ACADMIC_TIMELINE, ABOUT_ACADMIC_TIMELINE_OPTIONS } from '../../types';
 import illustration from "./undraw_education_f8ru.svg"
-import { CSSProperties } from 'react';
 export default function AboutAcadmics() {
 
     return (<Stack direction='row' justifyContent='space-between'>
