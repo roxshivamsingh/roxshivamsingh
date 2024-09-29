@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -6,7 +7,6 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { Stack, Typography, } from '@mui/material';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { CSSProperties } from 'react';
 
 // =======================================================================
 
