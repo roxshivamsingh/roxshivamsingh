@@ -1,25 +1,24 @@
 import { forwardRef } from 'react';
 import { Icon } from '@iconify/react';
-
-import Box, { BoxProps } from '@mui/material/Box';
+import { StackProps, Stack } from '@mui/material';
+// =======================================================================
 
 import { IconifyProps } from './types';
 
-// ----------------------------------------------------------------------
+interface IProps extends StackProps { icon: IconifyProps; }
 
-interface Props extends BoxProps {
-  icon: IconifyProps;
-}
-
-export const Iconify = forwardRef<SVGElement, Props>(({ icon, width = 20, sx, ...other }, ref) => (
-  <Box
-    ref={ref}
-    component={Icon}
-    className="component-iconify"
-    icon={icon}
-    sx={{ width, height: width, ...sx }}
-    {...other}
-  />
-));
+export const Iconify = forwardRef<SVGElement, IProps>((props, ref) => {
+  const { icon, width = 20, sx, ...other } = props
+  return (
+    <Stack
+      ref={ref}
+      component={Icon}
+      className="component-iconify"
+      icon={icon}
+      sx={{ width, height: width, ...sx }}
+      {...other}
+    />
+  )
+});
 
 export default Iconify;

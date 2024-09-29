@@ -84,11 +84,7 @@ const SX: { [key: string]: SxProps } = {
     justifyContent: "center",
     minHeight: "calc(100vh - 70px)"
   },
-  IconResume: {
-    "&:hover": {
-      color: "red"
-    }
-  },
+  IconResume: { "&:hover": { color: "red" } },
   Icons: {
     display: "flex",
     gap: { sm: '10px', xs: '10px', md: '1.5rem', lg: '1.5rem' },
