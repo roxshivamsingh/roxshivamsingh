@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -6,18 +7,19 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import { Stack, Typography, } from '@mui/material';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 // =======================================================================
 
 import { Iconify } from "../../components/iconify";
 import { ABOUT_ACADMIC_TIMELINE, ABOUT_ACADMIC_TIMELINE_OPTIONS } from '../../types';
 import illustration from "./undraw_education_f8ru.svg"
-import { CSSProperties } from 'react';
-export default function AboutAcadmics() {
+export default function AboutAcadmics(props: TProps) {
 
     return (<Stack direction='row' justifyContent='space-between'>
-        <Stack sx={SX.ImageContent}>
+        {props?.isDesktop && (<Stack sx={SX.ImageContent}>
             <LazyLoadImage src={illustration} effect='blur' style={SX.ImageSize} />
-        </Stack>
+        </Stack>)}
+
         <Timeline position='left' sx={SX.Container}>
             {ABOUT_ACADMIC_TIMELINE?.map((item, i) => {
                 const args = {
@@ -68,3 +70,4 @@ const SX = {
     },
     ImageSize: { maxWidth: "400px" } as CSSProperties
 }
+type TProps = { isDesktop: boolean }

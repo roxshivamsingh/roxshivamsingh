@@ -1,7 +1,10 @@
-// import { authentication } from "../config";
-import { useAuthStateChanged } from "./use-data";
-import { useFirestoreListenerContents, useFirestoreListenerUser } from "./use-listener";
-import { useScrollToTop } from "./use-scroll-top";
+import {
+    useAuthStateChanged,
+    useMediaQueryService,
+    useScrollToTop,
+    useFirestoreListenerContents,
+    useFirestoreListenerUser
+} from ".";
 
 
 function useAppBaseService() {
@@ -10,6 +13,7 @@ function useAppBaseService() {
     useScrollToTop()
     useFirestoreListenerUser()
     useFirestoreListenerContents()
+    useMediaQueryService()
 }
 
 export default useAppBaseService;
