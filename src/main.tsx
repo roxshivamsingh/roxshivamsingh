@@ -6,9 +6,6 @@ import { store } from './redux';
 
 import App from './App.tsx'
 import './index.css'
-import { authentication } from './config/firebase.config.ts';
-
-authentication()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

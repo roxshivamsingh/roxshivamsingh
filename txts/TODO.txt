@@ -1,3 +1,19 @@
-TODO 22-03-2024
-[X] ADD: Dependencies;
+DO-IT 19/08/2024 🎯
+#========================================================================
+🚧 ADD: Portfolio > Image Lazy Loading;
+🚧 ADD: Portfolio > Information gathering for pipeline initialization;
+🚧 ADD: Portfolio > All media asset linked with backend;
+🚧 ADD: Portfolio > About - idea;
+🚧 ADD: Portfolio > About - refinement;
 
+
+ #========================================================================
+ACTIONS:
+
+✅ = Done
+❌ = Unable to complete
+❓ = No idea
+⏳ = Waiting
+🛠️ = Developing
+🚧 = Awaiting
+🎯 = Target

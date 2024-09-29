@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation, Link } from 'react-router-dom';
 
 import {
   Box,
@@ -8,7 +9,6 @@ import {
   Typography,
   SxProps
 } from '@mui/material';
-import { useLocation, Link } from 'react-router-dom';
 // =======================================================================
 
 import classes from "./navbar.module.scss";
@@ -42,6 +42,7 @@ export default function NavBar() {
         <Box component={Stack} direction='row' spacing={{ lg: 3, md: 2, sm: 2, xs: 1 }}>
           {NAVLINKS.map((row, i) => {
             const isActive = row.path === pathname
+            const classNames = `${isActive ? classes.active : ''} ${classes.NavItem}`
             return (<Box key={i}
               component={Link}
               to={row.path}
@@ -49,7 +50,7 @@ export default function NavBar() {
                 ...SX.NavLink,
                 borderImageSource: isActive ? info.gradient : 'none',
               }}
-              className={isActive ? classes.active : ''}
+              className={classNames}
             >
               <Iconify icon={row.icon}
                 sx={{ display: { lg: 'block', md: 'none', sm: 'none', xs: 'none' } }}
