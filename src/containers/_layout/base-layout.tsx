@@ -73,9 +73,11 @@ export default function BaseLayout() {
   // }, []);
   const auth = useAppSelector((state) => state.Auth);
 
+  // const { pathname } = useLocation();
   const isLoading = useMemo(() => auth.status === ReduxStatusEnum.Loading, [auth.status])
   return (<Box
     className={classes.dark}
+  // sx={{ ml: '1rem' }}
   // className={darkMode ? classes.dark : classes.light}
   >
     <Grid
@@ -94,7 +96,14 @@ export default function BaseLayout() {
           // handleClick={handleToggleDarkMode}
           />
         </Grid>
-        <Grid item flexGrow={1}>
+        <Grid item flexGrow={1}
+        // sx={{
+        //   marginLeft: {
+        //     xs: pathname !== '/' ? '3rem' : 'none',
+        //     sm: pathname !== '/' ? '3rem' : 'none',
+        //   }
+        // }}
+        >
 
           <Outlet />
           <ScrollTop>

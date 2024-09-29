@@ -1,20 +1,41 @@
 import { useEffect, useState } from "react";
-import { useLocation, Link } from 'react-router-dom';
-
+import { useLocation, Link as DomLink } from 'react-router-dom';
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import {
   Box,
   Stack,
-  AppBar,
   Toolbar,
-  Typography,
-  SxProps
+  Link,
+  SxProps,
+  styled
 } from '@mui/material';
 // =======================================================================
 
 import classes from "./navbar.module.scss";
 import { NAVLINKS, info } from '../../types/info';
 import { Iconify } from "../iconify";
+import MiniDrawer from "../react-drawer/react-drawer";
+interface AppBarProps extends MuiAppBarProps {
+  open?: boolean;
+}
 
+const AppBar = styled(MuiAppBar, { shouldForwardProp: (prop) => prop !== 'open' })<AppBarProps>(({ theme }) => ({
+  zIndex: theme.zIndex.drawer + 1,
+  // paddingLeft: 100,
+  // paddingLeft: "1rem",
+  transition: theme.transitions.create(['width', 'margin'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+}));
+
+// const DrawerHeader = styled('div')(({ theme }) => ({
+//   display: 'flex',
+//   alignItems: 'center',
+//   justifyContent: 'flex-end',
+//   padding: theme.spacing(0, 1),
+//   ...theme.mixins.toolbar,
+// }));
 export default function NavBar() {
 
   const { pathname } = useLocation();
@@ -33,18 +54,32 @@ export default function NavBar() {
   }, [])
 
   return (<Box sx={{ flexGrow: 1 }}>
-    <AppBar position="fixed" color={isFixed ? undefined : 'transparent'} elevation={0}>
-      <Toolbar>
-        <Typography component='a' href="/" sx={SX.Brand}>
-          &lt;roxshivamsingh /&gt;
-        </Typography>
 
-        <Box component={Stack} direction='row' spacing={{ lg: 3, md: 2, sm: 2, xs: 1 }}>
+    <AppBar position="fixed" color={isFixed ? undefined : 'transparent'} elevation={0}>
+
+      <Toolbar>
+        {/* <DrawerHeader> */}
+        <Link component={DomLink} to="/" sx={SX.Brand}>
+          &lt;roxshivamsingh /&gt;
+        </Link>
+
+        {/* </DrawerHeader> */}
+        <Box component={Stack} direction='row'
+          sx={{
+            display: {
+              xs: 'none',
+              sm: 'none',
+              md: 'flex',
+              lg: 'flex',
+              xl: 'flex'
+            }
+          }}
+          spacing={{ lg: 3, md: 2, sm: 2, xs: 1 }}>
           {NAVLINKS.map((row, i) => {
             const isActive = row.path === pathname
             const classNames = `${isActive ? classes.active : ''} ${classes.NavItem}`
             return (<Box key={i}
-              component={Link}
+              component={DomLink}
               to={row.path}
               sx={{
                 ...SX.NavLink,
@@ -69,7 +104,10 @@ export default function NavBar() {
         </Box>
       </Toolbar>
     </AppBar>
+
     <Box sx={{ mt: 10 }} />
+    <MiniDrawer />
+
   </Box >
   )
 
