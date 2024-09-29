@@ -4,25 +4,18 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-
 import Typography from '@mui/material/Typography';
-import { Iconify } from "../../components/iconify";
 import { Box, Chip, Stack } from '@mui/material';
 
+import { Iconify } from "../../components/iconify";
+import { ABOUT_EXPIERIENCE_TIMELINE } from '../../types';
+
 export default function AboutTimeline() {
-    return (<Timeline
-        position='right'
-        sx={{
-            [`& .${timelineItemClasses.root}:before`]: {
-                flex: 0,
-                padding: 0,
-            },
-        }}
-    >
-        {TIMELINE_OPTIONS?.map((item, i) => {
+    return (<Timeline position='right' sx={SX.Container}>
+        {ABOUT_EXPIERIENCE_TIMELINE?.map((item, i) => {
             const args = {
-                isLastEl: (TIMELINE_OPTIONS?.length - 1 !== i),
-                isMidEl: !!(i && TIMELINE_OPTIONS?.length < (i + 1))
+                isLastEl: (ABOUT_EXPIERIENCE_TIMELINE?.length - 1 !== i),
+                isMidEl: !!(i && ABOUT_EXPIERIENCE_TIMELINE?.length < (i + 1))
             }
             return (<TimelineItem key={i}>
                 {/* <TimelineOppositeContent
@@ -30,7 +23,7 @@ export default function AboutTimeline() {
                         variant="body2"
                         color="text.secondary"
                     >
-                        {item.duration}
+                        {item.timeline}
                     </TimelineOppositeContent> */}
                 <TimelineSeparator>
                     {/* {i == 0 && (<TimelineDot color='secondary' />)} */}
@@ -50,7 +43,6 @@ export default function AboutTimeline() {
                         </Typography>
                     </Stack>
                     <Box
-
                         sx={{
                             display: "flex",
                             flexDirection: "row",
@@ -60,7 +52,6 @@ export default function AboutTimeline() {
                                 lg: "lft",
                                 xs: "left"
                             },
-
                         }}
                     >
                         {item.technologies?.map((item, i) => <Chip label={item} size='small' key={i} />)}
@@ -73,47 +64,12 @@ export default function AboutTimeline() {
     </Timeline>
     );
 }
-const TIMELINE_OPTIONS = [
-    {
-        name: 'IGSS Private Limited',
-        role: 'React.js Developer',
-        duration: 'April 2024 - Present',
-        technologies: ['React.js', 'Laravel', 'PHP', 'Typescript', 'Redux-Toolkit'],
-        icon: 'mdi:company',
-        align: 'left',
-    },
-    {
-        name: 'Sulovi Technologies Private Limited',
-        role: 'React.js Developer',
-        duration: 'Aug 2022 - Feb 2024',
-        technologies: ['React.js', 'Laravel', 'PHP', 'Typescript', 'Redux-Toolkit'],
-        icon: 'mdi:company',
-        align: 'right',
-    },
-    {
-        name: 'Sulovi Technologies Private Limited',
-        role: 'React.js Developer (Intern)',
-        duration: 'Aug 2022 - Feb 2024',
-        technologies: ['React.js', 'Laravel', 'PHP', 'Typescript', 'Redux-Toolkit'],
-        icon: 'mdi:company',
-        align: 'left',
-    },
-    {
-        name: 'Mekvahan',
-        role: 'React.js Developer (Intern)',
-        duration: 'May 2020 - May 2021',
-        technologies: ['React.js', 'Laravel', 'PHP', 'Typescript'],
-        icon: 'mdi:company',
-        align: 'right',
-    },
-    {
-        name: '',
-        role: '',
-        duration: '',
-        technologies: [],
-        icon: 'mdi:timer-sand',
-        align: 'right',
 
-    },
-
-]
+const SX = {
+    Container: {
+        [`& .${timelineItemClasses.root}:before`]: {
+            flex: 0,
+            padding: 0,
+        },
+    }
+}
