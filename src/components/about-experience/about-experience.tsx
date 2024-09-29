@@ -17,7 +17,7 @@ import illustration from "./undraw_developer_activity_re_39tg.svg"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { CSSProperties } from 'react';
 
-export default function AboutExperience() {
+export default function AboutExperience(props: TProps) {
     return (<Stack direction='row' justifyContent='space-between'>
         <Timeline position='right' sx={SX.Container}>
             {ABOUT_EXPIERIENCE_TIMELINE?.map((item, i) => {
@@ -60,9 +60,10 @@ export default function AboutExperience() {
 
         </Timeline>
 
-        <Stack sx={SX.ImageContent} >
+        {props?.isDesktop && (<Stack sx={SX.ImageContent} >
             <LazyLoadImage src={illustration} effect='blur' style={SX.ImageSize} />
-        </Stack>
+        </Stack>)}
+
 
     </Stack>
     );
@@ -96,3 +97,5 @@ const SX = {
     },
     ImageSize: { maxWidth: "400px" } as CSSProperties
 }
+
+type TProps = { isDesktop: boolean }
