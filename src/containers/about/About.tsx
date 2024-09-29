@@ -2,12 +2,16 @@ import { Box, Container, Typography } from "@mui/material";
 // =======================================================================
 
 import Style from "./About.module.scss";
-import { info } from "../../types";
+import { info, ViewportEnum } from "../../types";
 import Terminal from "../../components/terminal/Terminal";
 import { AboutAcadmics, AboutExperience } from "../../components";
+import { useMemo } from "react";
+import { useAppSelector } from "../../redux";
 
 export default function About() {
-  const renderAboutText = (<>
+  const { viewport } = useAppSelector((state) => state.Util.value);
+  console.log(viewport)
+  const renderAboutText = useMemo(() => (<>
     <p>
       <span style={{ color: info.baseColor }}>
         {info.username}$
@@ -20,7 +24,7 @@ export default function About() {
       </span>
       {info.bio}
     </p>
-  </>)
+  </>), [])
 
   const renderSkillText = <>
     <p>
@@ -81,6 +85,7 @@ export default function About() {
         <Typography variant='h4' sx={{ fontWeight: 500 }}>
           About
         </Typography>
+        {viewport}
         <Box sx={{ mt: "3rem" }}>
 
           {[renderAboutText, renderSkillText, renderMiscText]?.map((row, i) => {
@@ -91,11 +96,11 @@ export default function About() {
           <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
             Experience
           </Typography>
-          <AboutExperience />
+          <AboutExperience isDesktop={viewport === ViewportEnum.Desktop} />
           <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
             Acadmics
           </Typography>
-          <AboutAcadmics />
+          <AboutAcadmics isDesktop={viewport === ViewportEnum.Desktop} />
         </Box>
       </Container>
 
