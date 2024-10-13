@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -14,10 +16,9 @@ import Chip from '@mui/material/Chip';
 import { Iconify } from "../iconify";
 import { ABOUT_EXPIERIENCE_TIMELINE } from '../../types';
 import illustration from "./undraw_developer_activity_re_39tg.svg"
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { CSSProperties } from 'react';
 
 export default function AboutExperience(props: TProps) {
+
     return (<Stack direction='row' justifyContent='space-between'>
         <Timeline position='right' sx={SX.Container}>
             {ABOUT_EXPIERIENCE_TIMELINE?.map((item, i) => {
