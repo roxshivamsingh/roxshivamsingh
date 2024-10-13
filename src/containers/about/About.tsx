@@ -73,6 +73,6 @@ const SX = {
     fontWeight: 300,
     // background: '#121212',
     borderRadius: '.2rem',
-    p: 2
+    py: 2
   }
 }
