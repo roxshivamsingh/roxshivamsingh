@@ -1,4 +1,3 @@
-import CarbonCellImage from "../assets/images/carbon-cell.png"
 
 export type TProjectItem = {
     name: string,
@@ -69,7 +68,7 @@ export const _projects: TProjectItem[] = [
         technologies: ["Node.js", "React.js", "TypeScript", "MUI"],
         remark: "The carbon cell is the dashboard UI. My Carbon Cell company conducted an assessment but they did not even look at which candidate had mimicked the UI so well.",
         link: {
-            image: CarbonCellImage,
+            image: `/images/projects/carbon-cell.png`,
             github: `${GITHUB_URL}/cuddly-robot`,
             live: "https://cuddly-robot.vercel.app"
         }
