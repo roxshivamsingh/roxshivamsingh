@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 // =======================================================================
 
-import classes from "./navbar.module.scss";
+import classes from "./Navbar.module.scss";
 import { NAVLINKS, info } from '../../types/info';
 import { Iconify } from "../iconify";
 
