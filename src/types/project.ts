@@ -17,7 +17,7 @@ export const _projects: TProjectItem[] = [
         remark: "Chat app like Chat-GPT with Google social login and manual login. When we    enter a prompt, it will give an output in video format. Based on React.js,    Firebase, Redux-Toolkit Material-UI. This app still in development.",
         technologies: ["React.js", "TypeScript", "Firebase", "MUI"],
         link: {
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrGbYVybUZXBmSFDktnjGZk-OCMqDgzQSpMCay2xoAQ&s",
+            image: "/images/projects/content-right.png",
             github: "https://github.com/digitalphora/devgpt-contentright",
             live: "https://devgpt-contentright.vercel.app"
         }
@@ -58,7 +58,9 @@ export const _projects: TProjectItem[] = [
         remark: "It is a short video platform that contains a portrait screen to scroll video.    Tech-Stack I used React.js, Firebase, and Material-UI",
         technologies: ["Laravel", "Bootstrap", "PHP", "MySQL", "NGINX"],
         link: {
-            image: "https://w7.pngwing.com/pngs/75/407/png-transparent-hand-holding-shopping-bag-silhouette-illustration-online-shopping-shopping-bag-logo-coupon-business-shopping-bags-business-woman-rectangle-retail-thumbnail.png",
+            // image: "https://w7.pngwing.com/pngs/75/407/png-transparent-hand-holding-shopping-bag-silhouette-illustration-online-shopping-shopping-bag-logo-coupon-business-shopping-bags-business-woman-rectangle-retail-thumbnail.png",
+            image: "/images/projects/shopping-app.png",
+
             github: "",
             live: "https://royalindiashop.com"
         }
