@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import { useLocation, Link } from 'react-router-dom';
 
 import {
@@ -6,7 +6,7 @@ import {
   Stack,
   AppBar,
   Toolbar,
-  Typography,
+  // Typography,
   SxProps
 } from '@mui/material';
 // =======================================================================
@@ -35,9 +35,9 @@ export default function NavBar() {
   return (<Box sx={{ flexGrow: 1 }}>
     <AppBar position="fixed" color={isFixed ? undefined : 'transparent'} elevation={0}>
       <Toolbar>
-        <Typography component='a' href="/" sx={SX.Brand}>
+        <Link to="/" style={SX.Brand as CSSProperties}>
           &lt;roxshivamsingh /&gt;
-        </Typography>
+        </Link>
 
         <Box component={Stack} direction='row' spacing={{ lg: 3, md: 2, sm: 2, xs: 1 }}>
           {NAVLINKS.map((row, i) => {

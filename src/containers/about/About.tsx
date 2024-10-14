@@ -1,109 +1,78 @@
-import { Box, Container, Typography } from "@mui/material";
+import { useMemo } from "react";
+import { Box, Container, Stack, Typography } from "@mui/material";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 // =======================================================================
 
-import Style from "./About.module.scss";
-import { info, ViewportEnum } from "../../types";
-import Terminal from "../../components/terminal/Terminal";
+import { ViewportEnum } from "../../types";
 import { AboutAcadmics, AboutExperience } from "../../components";
-import { useMemo } from "react";
 import { useAppSelector } from "../../redux";
+import { TECHNOLOGY_OPTIONS } from "../../mocks";
 
 export default function About() {
+
   const { viewport } = useAppSelector((state) => state.Util.value);
-  console.log(viewport)
-  const renderAboutText = useMemo(() => (<>
-    <p>
-      <span style={{ color: info.baseColor }}>
-        {info.username}$
-      </span>{" "}
-      cat about-{info.username}{" "}
-    </p>
-    <p>
-      <span style={{ color: info.baseColor }}>
-        about{info.username} <span className={Style.green}>(main)</span> ${" "}
-      </span>
-      {info.bio}
-    </p>
-  </>), [])
 
-  const renderSkillText = <>
-    <p>
-      <span style={{ color: info.baseColor }}>
-        {info.username}
-      </span>{" "}
-      cd skills/tools
-    </p>
-    <p>
-      <span style={{ color: info.baseColor }}>
-        skills/tools <span className={Style.green}>(main)</span> $
-      </span>{" "}
-      ls
-    </p>
-    <p style={{ color: info.baseColor }}> Proficient With</p>
-    <ul className={Style.skills}>
-      {info.skills.proficientWith.map((proficiency, index) => (
-        <li key={index}>{proficiency}</li>
-      ))}
-    </ul>
-    <p style={{ color: info.baseColor }}> Exposed To</p>
-    <ul className={Style.skills}>
-      {info.skills.exposedTo.map((skill, index) => (
-        <li key={index}>{skill}</li>
-      ))}
-    </ul>
-  </>
+  const renderSkillContent = useMemo(() => {
+    return (<>
+      <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
+        Skills & Abilites
+      </Typography>
+      <Stack direction='row' flexWrap='wrap' gap={3} sx={{ my: 3 }}>
+        {TECHNOLOGY_OPTIONS?.map((item, i) => {
+          return (<Stack key={i} alignItems='center' >
+            <LazyLoadImage src={`/images/technologies/${item.image}`} effect="blur" width={80} />
+            {item.label}
+          </Stack>)
+        })}
+      </Stack>
+    </>)
+  }, [])
 
+  const renderExperienceContent = useMemo(() => {
+    return (<>
+      <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
+        Experience
+      </Typography>
+      <AboutExperience isDesktop={viewport === ViewportEnum.Desktop} />
+    </>)
+  }, [viewport])
 
-  const renderMiscText = <>
-    <p>
-      <span style={{ color: info.baseColor }}>
-        {info.username}
-      </span>{" "}
-      cd hobbies/interests
-    </p>
-    <p>
-      <span style={{ color: info.baseColor }}>
-        hobbies/interests <span className={Style.green}>(main)</span> $
-      </span>{" "}
-      ls
-    </p>
-    <ul>
-      {info.hobbies.map((hobby, index) => (
-        <li key={index}>
-          <Box component={"span"} mr={"1rem"}>
-            {hobby.emoji}
-          </Box>
-          {hobby.label}
-        </li>
-      ))}
-    </ul>
-  </>
+  const renderDescriptionContent = useMemo(() => {
+    return (<Box sx={SX.Description}>
+      As a Senior Full Stack Developer at iGuru Software Solutions Private Limited, I create robust and innovative web applications using a wide array of technologies. I have a Bachelor of Technology degree in Computer Science Engineering from BSACET, Mathura.
+      <br /> <br />
+      At my previous role at Sulovi Technologies Private Limited, I spearheaded the development and maintenance of applications using React and Firebase, introducing features such as virtualization, WhatsApp cloud API integration, and no-internet functionality. I also implemented a Google Cloud function as a microservice for backend tasks using Python, and migrated the Redux legacy pipeline to Redux Toolkit. I collaborated with other developers, tested the code quality, and documented the features and functionalities. I am always eager to learn new skills, enhance my existing ones, and deliver efficient solutions.
+    </Box>)
+  }, [])
 
-  return (
-    <>
-      <Container>
-        <Typography variant='h4' sx={{ fontWeight: 500 }}>
-          About
-        </Typography>
-        {viewport}
-        <Box sx={{ mt: "3rem" }}>
+  return (<Container>
+    <Typography variant='h4' sx={{ fontWeight: 500 }}>
+      About
+    </Typography>
+    <Box sx={{ mt: "3rem" }}>
+      {renderDescriptionContent}
 
-          {[renderAboutText, renderSkillText, renderMiscText]?.map((row, i) => {
-            return (<Terminal key={i}>
-              {row}
-            </Terminal>)
-          })}
-          <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
-            Experience
-          </Typography>
-          <AboutExperience isDesktop={viewport === ViewportEnum.Desktop} />
-          <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
-            Acadmics
-          </Typography>
-          <AboutAcadmics isDesktop={viewport === ViewportEnum.Desktop} />
-        </Box>
-      </Container>
+      {renderSkillContent}
 
-    </>
+      {renderExperienceContent}
+      <Typography variant='h4' sx={{ fontWeight: 500, mb: 1 }}>
+        Acadmics
+      </Typography>
+      <AboutAcadmics isDesktop={viewport === ViewportEnum.Desktop} />
+    </Box>
+  </Container>
   );
+}
+
+const SX = {
+  Description: {
+    fontSize: '1.3rem',
+    // textAlign: 'justify',
+    mb: 2,
+    letterSpacing: 1,
+    fontWeight: 300,
+    // background: '#121212',
+    borderRadius: '.2rem',
+    p: 2
+  }
 }
