@@ -3,3 +3,4 @@ export enum ViewportEnum {
     Portrait = 'portrait',
     None = ''
 }
+export type TImageLabel = { image: string, label: string }
