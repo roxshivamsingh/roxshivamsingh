@@ -1,9 +1,5 @@
 import { Box } from "@mui/material";
-
-interface IProps {
-  darkMode: boolean,
-  handleClick: VoidFunction
-}
+// =======================================================================
 
 export default function Toggler({ darkMode, handleClick }: IProps) {
   const transition = "all 250ms ease";
@@ -28,3 +24,9 @@ export default function Toggler({ darkMode, handleClick }: IProps) {
     </Box>
   );
 }
+
+interface IProps {
+  darkMode: boolean,
+  handleClick: VoidFunction
+}
+

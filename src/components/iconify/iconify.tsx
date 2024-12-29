@@ -5,7 +5,6 @@ import { StackProps, Stack } from '@mui/material';
 
 import { IconifyProps } from './types';
 
-interface IProps extends StackProps { icon: IconifyProps; }
 
 export const Iconify = forwardRef<SVGElement, IProps>((props, ref) => {
   const { icon, width = 20, sx, ...other } = props
@@ -22,3 +21,4 @@ export const Iconify = forwardRef<SVGElement, IProps>((props, ref) => {
 });
 
 export default Iconify;
+interface IProps extends StackProps { icon: IconifyProps; }

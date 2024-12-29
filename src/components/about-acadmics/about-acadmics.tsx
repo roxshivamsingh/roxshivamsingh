@@ -13,6 +13,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Iconify } from "../../components/iconify";
 import { ABOUT_ACADMIC_TIMELINE, ABOUT_ACADMIC_TIMELINE_OPTIONS } from '../../types';
 import illustration from "./undraw_education_f8ru.svg"
+
 export default function AboutAcadmics(props: TProps) {
 
     return (<Stack direction='row' justifyContent='space-between'>

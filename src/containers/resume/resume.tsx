@@ -4,8 +4,8 @@ import _ from "lodash";
 // =======================================================================
 
 import { useAppSelector } from "../../redux";
-import { ContentEnum } from "../../types/content";
-import CustomDownloadButton from "../../components/custom-download-button";
+import { ContentEnum } from "../../types";
+import { CustomDownloadButton } from "../../components";
 
 export default function Resume() {
     const contents = useAppSelector((state) => state.Contents);
