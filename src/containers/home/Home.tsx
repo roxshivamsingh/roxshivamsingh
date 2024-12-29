@@ -5,13 +5,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // =======================================================================
 
-import classes from "./home.module.scss";
-import EmojiBullet from "../../components/emoji-bullet/emoji-bullet";
-import passport from "../../assets/images/photo.png";
-
-import { info } from "../../types/info";
-import { Iconify } from "../../components/iconify";
-import HtmlTooltip from "../../components/html-tooltip";
+import classes from "./Home.module.scss";
+import { info } from "../../types";
+import { Iconify, HtmlTooltip, EmojiBullet } from "../../components";
 
 export default function Home() {
 
@@ -22,7 +18,7 @@ export default function Home() {
       effect="blur"
       style={{ background: info.gradient }}
       component={LazyLoadImage}
-      src={passport}
+      src={'/images/personal/photo.png'}
       sx={SX.Passport}
     />
     {/* <div className={classes.home__img} /> */}

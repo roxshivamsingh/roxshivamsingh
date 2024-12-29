@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 
-interface IProps { emoji: string, text: string }
 
 function InfoIcon(props: { value: string }) {
 
@@ -57,3 +56,4 @@ export default function EmojiBullet(props: IProps) {
   );
 }
 
+interface IProps { emoji: string, text: string }

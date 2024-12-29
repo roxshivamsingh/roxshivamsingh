@@ -1,6 +1,5 @@
+import { useMemo } from "react";
 import { Outlet } from "react-router-dom";
-import classes from "./base-layout.module.scss";
-import Navbar from "../../components/navbar";
 import {
   Box,
   Fab,
@@ -9,18 +8,12 @@ import {
   SxProps,
   useScrollTrigger
 } from "@mui/material";
-import { Iconify } from "../../components/iconify";
+// =======================================================================
+
+import classes from "./base-layout.module.scss";
 import { useAppSelector } from "../../redux";
-import { ReduxStatusEnum } from "../../types/redux";
-import { useMemo } from "react";
-import { CustomCircularProgress } from "../../components";
-
-interface IScrollTop {
-  window?: () => Window;
-  children: React.ReactElement;
-}
-
-
+import { ReduxStatusEnum } from "../../types";
+import { CustomCircularProgress, NavBar, Iconify } from "../../components";
 function ScrollTop(props: IScrollTop) {
   const { children, window } = props;
   const trigger = useScrollTrigger({
@@ -89,7 +82,7 @@ export default function BaseLayout() {
         <CustomCircularProgress />
       </Grid> : <>
         <Grid item id="back-to-top-anchor">
-          <Navbar
+          <NavBar
           // darkMode={darkMode}
           // handleClick={handleToggleDarkMode}
           />
@@ -140,3 +133,10 @@ const SX: { [key: string]: SxProps } = {
     border: "1px solid white"
   }
 }
+
+interface IScrollTop {
+  window?: () => Window;
+  children: React.ReactElement;
+}
+
+

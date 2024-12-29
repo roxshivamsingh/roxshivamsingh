@@ -13,10 +13,12 @@ import {
     Tooltip,
     SxProps,
 } from '@mui/material';
-import { Iconify } from "../../components/iconify";
 import { Link } from 'react-router-dom';
-import { _projects } from '../../types/project';
 import { useMemo } from 'react';
+// =======================================================================
+
+import { Iconify } from "../../components";
+import { _projects } from '../../types';
 
 export default function Project() {
 

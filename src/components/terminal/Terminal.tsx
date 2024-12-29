@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
-import classes from "./Terminal.module.scss";
 import { Box, SxProps } from "@mui/material";
-const iconClass = "fa fa-circle";
+// =======================================================================
+import classes from "./Terminal.module.scss";
+
 
 interface IProps { children: ReactNode }
 
@@ -41,3 +42,4 @@ const SX: { [key: string]: SxProps } = {
     fontFamily: "Courier New, Courier, monospace",
   }
 }
+const iconClass = "fa fa-circle";
