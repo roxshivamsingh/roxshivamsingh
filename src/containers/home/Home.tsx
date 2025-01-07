@@ -5,7 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // =======================================================================
 
-import classes from "./Home.module.scss";
+import classes from "./home.module.scss";
 import { info } from "../../types";
 import { Iconify, HtmlTooltip, EmojiBullet } from "../../components";
 

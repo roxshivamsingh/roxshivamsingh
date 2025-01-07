@@ -14,7 +14,7 @@ import Chip from '@mui/material/Chip';
 // =======================================================================
 
 import { Iconify } from "../iconify";
-import { ABOUT_EXPIERIENCE_TIMELINE } from '../../types';
+import { ABOUT_EXPIERIENCE_TIMELINE } from '../../mocks';
 import illustration from "./undraw_developer_activity_re_39tg.svg"
 
 export default function AboutExperience(props: TProps) {
