@@ -1,12 +1,13 @@
 import { lazy, Suspense } from "react";
 import { Navigate, useRoutes } from "react-router-dom";
 // =======================================================================================
-import About from "../containers/about/About";
-import Project from "../containers/projects/project";
-import NotFound from "../containers/not-found/not-found";
-import BaseLayout from "../containers/_layout/base-layout";
-import { CustomCircularProgress } from "../components";
 
+import BaseLayout from "../containers/_layout/base-layout";
+
+import { CustomCircularProgress } from "../components";
+const Project = lazy(() => import("../containers/projects"))
+const NotFound = lazy(() => import("../containers/not-found"))
+const About = lazy(() => import("../containers/about"))
 const Home = lazy(() => import("../containers/home"))
 const Resume = lazy(() => import("../containers/resume"))
 
@@ -19,36 +20,40 @@ export default function Router() {
         children: [
             {
                 path: '/',
-                element: (<Suspense
-                    fallback={<CustomCircularProgress />}
-                >
+                element: (<Suspense fallback={<CustomCircularProgress />}>
                     <Home />
                 </Suspense>)
             },
             {
                 path: 'about',
-                element: <About
+                element: <Suspense fallback={<CustomCircularProgress />}>
+                    <About />
+                </Suspense>
 
-                />
             },
             {
                 path: 'contact',
-                element: <About />
+                element: <Suspense fallback={<CustomCircularProgress />}>
+                    <About />
+                </Suspense>
             },
             {
                 path: 'projects',
-                element: <Project />
+                element: <Suspense fallback={<CustomCircularProgress />}>
+                    <Project />
+                </Suspense>
             },
             {
                 path: 'resume',
-                element: <Suspense
-                    fallback={<CustomCircularProgress />}
-
-                ><Resume /></Suspense>
+                element: <Suspense fallback={<CustomCircularProgress />}>
+                    <Resume />
+                </Suspense>
             },
             {
                 path: '/not-found',
-                element: <NotFound />
+                element: <Suspense fallback={<CustomCircularProgress />}>
+                    <NotFound />
+                </Suspense>
             },
 
             {
