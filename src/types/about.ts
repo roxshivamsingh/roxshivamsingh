@@ -23,7 +23,7 @@ export const ABOUT_EXPERIENCE_TIMELINE_OPTIONS = [
         timeline: 'April 2024 - Present',
         duration: { startDate: '2024-04-01', endDate: '' },
         isPresent: true,
-        technologies: ['React.js', 'Laravel', 'PHP', 'Typescript', 'Redux-Toolkit'],
+        technologies: ['React.js', 'Typescript', 'Material-UI', 'React-Google-Chart', 'Redux-Toolkit', 'React-Query', 'API', 'BitBucket'],
         icon: 'mdi:company',
         align: 'left',
     },
@@ -32,7 +32,8 @@ export const ABOUT_EXPERIENCE_TIMELINE_OPTIONS = [
         role: 'React.js Developer',
         timeline: 'Aug 2022 - Feb 2024',
         duration: { startDate: '2022-08-01', endDate: '2024-02-01' },
-        technologies: ['React.js', 'Laravel', 'PHP', 'Typescript', 'Redux-Toolkit'],
+        technologies: ['React.js', 'Typescript', 'Material-UI', 'Redux-Toolkit', 'Firebase', 'Github'],
+
         icon: 'mdi:company',
         align: 'right',
     },
