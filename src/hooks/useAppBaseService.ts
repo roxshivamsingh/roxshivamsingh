@@ -3,9 +3,8 @@ import {
     useMediaQueryService,
     useScrollToTop,
     useFirestoreListenerContents,
-    useFirestoreListenerUser
-} from ".";
-
+    useFirestoreListenerUser,
+} from '.'
 
 function useAppBaseService() {
     useAuthStateChanged()
@@ -16,4 +15,4 @@ function useAppBaseService() {
     useMediaQueryService()
 }
 
-export default useAppBaseService;
+export default useAppBaseService

@@ -1,1 +1,1 @@
-export { default } from "./about-acadmics"
+export { default } from './about-acadmics'

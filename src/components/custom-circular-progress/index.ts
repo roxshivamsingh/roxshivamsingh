@@ -1,1 +1,1 @@
-export { default } from "./custom-circular-progress"
+export { default } from './custom-circular-progress'

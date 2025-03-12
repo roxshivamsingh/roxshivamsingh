@@ -1,12 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit'
 // =======================================================================
-import { AuthReducer, ContentReducer, UtilReducer } from "./slices";
+import { AuthReducer, ContentReducer, UtilReducer } from './slices'
 
 export const store = configureStore({
     reducer: {
         Auth: AuthReducer,
         Contents: ContentReducer,
-        Util: UtilReducer
+        Util: UtilReducer,
     },
 
     middleware: (getDefaultMiddleware) =>
@@ -14,7 +14,7 @@ export const store = configureStore({
             // thunk: {},
             serializableCheck: false,
         }),
-});
+})
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
