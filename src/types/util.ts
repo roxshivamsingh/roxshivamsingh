@@ -1,6 +1,6 @@
 export enum ViewportEnum {
     Desktop = 'desktop',
     Portrait = 'portrait',
-    None = ''
+    None = '',
 }
-export type TImageLabel = { image: string, label: string }
+export type TImageLabel = { image: string; label: string }
