@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# 👋 Hi there, I'm Shivam Singh
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🎯 **Senior Full-Stack Developer** | 🧠 **Tech Enthusiast** | 🇮🇳 **Based in India**
 
-Currently, two official plugins are available:
+Welcome to my GitHub profile! I'm a passionate software engineer with a strong foundation in both frontend and backend development. I thrive on building scalable, efficient, and user-friendly web applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React, TypeScript, Vite, Remix
+- **UI Libraries**: Material-UI (MUI), Tailwind CSS, HeroUI
+- **Backend**: Laravel, Firebase (including Firebase Storage)
+- **DevOps & Tools**: Docker, Linux
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 📚 Academic Background
 
-- Configure the top-level `parserOptions` property like this:
+I hold a degree in Computer Science, which has equipped me with a solid understanding of software development principles and practices.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## 🌐 Portfolio
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Check out my work and projects on my [personal portfolio](https://roxshivamsingh.com/about).
+
+## 📫 Let's Connect
+
+Feel free to reach out to me via [email](mailto:roxshivamsingh@gmail.com) or connect with me on [LinkedIn](https://in.linkedin.com/in/roxshivamsingh).
+
+---
+
